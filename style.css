@@ -524,3 +524,100 @@ footer {
   transform: translateY(-10px);
   background: #222;
 }
+/* ======== FORMULÁRIOS ======== */
+.form-container {
+  max-width: 420px;
+  margin: 120px auto 60px; /* espaço por causa do header fixo */
+  background: #111;
+  border: 1px solid #e50914;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  color: #fff;
+}
+
+.form-container h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #e50914;
+  text-align: center;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 12px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  outline: none;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: #e50914;
+}
+
+.form-container button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-container button:hover {
+  background: #ff1e26;
+}
+/* ===== DASHBOARD ===== */
+.dashboard {
+  margin-top: 120px; /* espaço por causa do header fixo */
+  text-align: center;
+  color: #fff;
+}
+
+.dashboard h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.dashboard p {
+  margin-bottom: 30px;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.dashboard-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dashboard-buttons .btn {
+  display: inline-block;
+  padding: 15px 25px;
+  background: #e50914;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.dashboard-buttons .btn:hover {
+  background: #ff1e26;
+}

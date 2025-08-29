@@ -17,21 +17,64 @@
 
   <main class="form-container">
     <h2>Login</h2>
-    <form>
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" placeholder="Digite seu e-mail" required>
+    <form onsubmit="fazerLogin(event)">
+  <label for="email">E-mail:</label>
+  <input type="email" id="email" required>
 
-      <label for="senha">Senha:</label>
-      <input type="password" id="senha" placeholder="Digite sua senha" required>
+  <label for="senha">Senha:</label>
+  <input type="password" id="senha" required>
 
-      <button type="submit">Entrar</button>
-    </form>
+  <button type="submit">Entrar</button>
+</form>
+
     <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
   </main>
 
   <footer>
     <p>&copy; 2025 DIGIVEND - Todos os direitos reservados</p>
   </footer>
+<script>
+  let tentativas = 3;
+  let bloqueado = false;
+
+  function fazerLogin(event) {
+    event.preventDefault();
+
+    // se já está bloqueado
+    if (bloqueado) {
+      alert("🚫 Sua conta está bloqueada!\nEntre em contato com o suporte.");
+      document.getElementById("suporte-msg").style.display = "block"; // mostra botão suporte
+      return;
+    }
+
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+
+    // usuário de exemplo
+    const usuarioDemo = "teste@digivend.com";
+    const senhaDemo = "123456";
+
+    if (email === usuarioDemo && senha === senhaDemo) {
+      alert("✅ Login realizado com sucesso!\nBem-vindo de volta!");
+      window.location.href = "index.html";
+    } else {
+      tentativas--;
+      if (tentativas > 0) {
+        alert(`❌ E-mail ou senha incorretos!\nTentativas restantes: ${tentativas}`);
+      } else {
+        bloqueado = true;
+        alert("🚫 Sua conta foi bloqueada por excesso de tentativas.");
+        document.getElementById("suporte-msg").style.display = "block"; // mostra botão suporte
+      }
+    }
+  }
+</script>
+
+<p id="suporte-msg" style="display:none; margin-top: 15px; color: red;">
+  🚫 Sua conta está bloqueada. <br>
+  <a href="suporte.html" class="btn">Falar com o Suporte</a>
+</p>
+
 </body>
 </html>
-++
+
