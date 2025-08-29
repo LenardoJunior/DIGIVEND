@@ -79,40 +79,43 @@
 </head>
 <body>
 
+  <body>
   <!-- Sidebar -->
-<div class="sidebar">
-  <h2>DIGIVEND</h2>
-  <ul>
-    <li><a href="#">Visão Geral</a></li>
-    <li><a href="#">Produtos</a></li>
-    <li><a href="#">Vendas</a></li>
-    <li><a href="#">Clientes</a></li>
-    <li><a href="#">Gerenciador de Produtos</a></li>
-    <li><a href="#">Relatórios</a></li>
-    <li><a href="#">Configurações</a></li>
-  </ul>
-</div>
+<!-- Botão para abrir a sidebar -->
+<div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+  <div class="sidebar">
+    <h2>DIGIVEND</h2>
+    <a href="dashboard.html">📊 Visão Geral</a>
+    <a href="produtos.html">🛒 Produtos</a>
+    <a href="vendas.html">💰 Vendas</a>
+    <a href="clientes.html">👥 Clientes</a>
+    <a href="gerenciador.html">⚙️ Gerenciador de Produtos</a>
+    <a href="relatorios.html">📑 Relatórios</a>
+    <a href="perfil.html">🙍 Perfil</a>
+    <a href="configuracoes.html">⚙️ Configurações</a>
+  </div>
 
   <!-- Conteúdo Principal -->
-<div class="main">
-  <h1>Bem-vindo ao Dashboard</h1>
-  <p>Aqui você acompanha suas vendas e gerencia seus produtos.</p>
+  <div class="main">
+    <h1>Bem-vindo ao Dashboard</h1>
+    <p>Aqui você acompanha suas vendas e gerencia seus produtos.</p>
 
-  <!-- Cards -->
-  <div class="cards">
-    <div class="card">
-      <h3>📊 Vendas do Dia</h3>
-      <p>R$ 0,00</p>
-    </div>
-    <div class="card">
-      <h3>🛒 Produtos Ativos</h3>
-      <p>0</p>
-    </div>
-    <div class="card">
-      <h3>👥 Novos Clientes</h3>
-      <p>0</p>
+    <div class="cards">
+      <div class="card">
+        <h3>📊 Vendas do Dia</h3>
+        <p>R$ 0,00</p>
+      </div>
+      <div class="card">
+        <h3>🛒 Produtos Ativos</h3>
+        <p>0</p>
+      </div>
+      <div class="card">
+        <h3>👥 Novos Clientes</h3>
+        <p>0</p>
+      </div>
     </div>
   </div>
+</body>
 
   <!-- Seção de produtos -->
   <section class="produtos-dashboard">
@@ -149,5 +152,32 @@
   <p>© 2025 DIGIVEND - Todos os direitos reservados.</p>
 </footer>
 
+<script>
+  function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('active');
+  }
+</script>
+
 </body>
+<!-- Botão de menu -->
+<div class="menu-btn" onclick="toggleSidebar()">☰</div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <h2>Menu</h2>
+  <a href="#">Visão Geral</a>
+  <a href="#">Produtos</a>
+  <a href="#">Vendas</a>
+  <a href="#">Clientes</a>
+  <a href="#">Gerenciador de Produtos</a>
+  <a href="#">Relatórios</a>
+  <a href="#">Perfil</a>
+  <a href="#">Configurações</a>
+</div>
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+  }
+</script>
+
 </html>
