@@ -90,25 +90,60 @@
   </div>
 
   <!-- Conteúdo Principal -->
-  <div class="main">
-    <h1>Bem-vindo ao Dashboard</h1>
-    <p>Aqui você acompanha suas vendas e gerencia seus produtos.</p>
+<div class="main">
+  <h1>Bem-vindo ao Dashboard</h1>
+  <p>Aqui você acompanha suas vendas e gerencia seus produtos.</p>
 
-    <div class="cards">
-      <div class="card">
-        <h3>📊 Vendas do Dia</h3>
-        <p>R$ 0,00</p>
-      </div>
-      <div class="card">
-        <h3>🛒 Produtos Ativos</h3>
-        <p>0</p>
-      </div>
-      <div class="card">
-        <h3>👥 Novos Clientes</h3>
-        <p>0</p>
-      </div>
+  <!-- Cards -->
+  <div class="cards">
+    <div class="card">
+      <h3>📊 Vendas do Dia</h3>
+      <p>R$ 0,00</p>
+    </div>
+    <div class="card">
+      <h3>🛒 Produtos Ativos</h3>
+      <p>0</p>
+    </div>
+    <div class="card">
+      <h3>👥 Novos Clientes</h3>
+      <p>0</p>
     </div>
   </div>
+
+  <!-- Seção de produtos -->
+  <section class="produtos-dashboard">
+    <h2>Gerenciar Produtos</h2>
+    <button class="adicionar">+ Adicionar Produto</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Imagem</th>
+          <th>Nome</th>
+          <th>Preço</th>
+          <th>Estoque</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="https://via.placeholder.com/60" alt="Produto"></td>
+          <td>Produto Exemplo</td>
+          <td>R$ 99,90</td>
+          <td>10</td>
+          <td>
+            <button class="editar">Editar</button>
+            <button class="remover">Remover</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<!-- Rodapé -->
+<footer>
+  <p>© 2025 DIGIVEND - Todos os direitos reservados.</p>
+</footer>
 
 </body>
 </html>

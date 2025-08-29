@@ -621,3 +621,66 @@ footer {
 .dashboard-buttons .btn:hover {
   background: #ff1e26;
 }
+/* ===== Dashboard - Tabela de Produtos ===== */
+.produtos-dashboard {
+  margin: 30px;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.produtos-dashboard h2 {
+  text-align: center;
+  color: #e50914;
+  margin-bottom: 20px;
+}
+
+.produtos-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.produtos-dashboard th, 
+.produtos-dashboard td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.produtos-dashboard th {
+  background: #e50914;
+  color: #fff;
+  font-size: 16px;
+}
+
+.produtos-dashboard tr:hover {
+  background: #1a1a1a;
+}
+
+.produtos-dashboard img {
+  border-radius: 8px;
+}
+
+.produtos-dashboard button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.produtos-dashboard button.editar {
+  background: #ffcc00;
+  color: #000;
+}
+
+.produtos-dashboard button.remover {
+  background: #e50914;
+  color: #fff;
+  margin-left: 5px;
+}
