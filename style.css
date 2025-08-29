@@ -231,3 +231,296 @@ footer {
   }
 }
 
+/* ======== SEÇÃO DESTAQUES ======== */
+.destaques {
+  background: #111; /* preto suave */
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.destaques h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #e50914;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border: 1px solid #e50914;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #ff1e26;
+}
+
+.card p {
+  font-size: 14px;
+  color: #ddd;
+}
+/* ======== RESPONSIVIDADE - SEÇÃO DESTAQUES ======== */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; /* ocupa quase toda a tela no celular */
+  }
+
+  .destaques h2 {
+    font-size: 22px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+}
+/* ======== SEÇÃO DEPOIMENTOS ======== */
+.depoimentos {
+  background: #111; /* fundo preto suave */
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.depoimentos h2 {
+  color: #e50914;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.depoimentos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.depoimento {
+  background: #222;
+  border: 1px solid #e50914;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+
+.depoimento:hover {
+  transform: translateY(-5px);
+}
+
+.depoimento p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.depoimento h4 {
+  color: #ff4c4c;
+  font-weight: bold;
+}
+/* ======== SEÇÃO CTA FINAL ======== */
+.cta-final {
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  border-top: 2px solid #e50914;
+}
+
+.cta-final h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #e50914;
+}
+
+.cta-final p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #cccccc;
+}
+
+.cta-final .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #e50914;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.cta-final .btn:hover {
+  background: #ff1e26;
+}
+/* ======== RESPONSIVIDADE ======== */
+
+/* Para tablets (até 1024px) */
+@media (max-width: 1024px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  .destaques {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Para celulares médios (até 768px) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .destaques {
+    grid-template-columns: 1fr;
+  }
+
+  .cta h2 {
+    font-size: 22px;
+  }
+}
+
+/* Para celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+/* ======== Rodapé ======== */
+footer {
+  background: #000;
+  color: #aaa;
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 2px solid #e50914;
+  margin-top: 30px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-nav a {
+  color: #fff;
+  margin: 0 8px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #e50914;
+}
+
+.socials a {
+  margin: 0 6px;
+  font-size: 18px;
+  text-decoration: none;
+}
+/* ======== SEÇÃO SOBRE / SERVIÇOS ======== */
+.sobre {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.sobre h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #e50914;
+}
+
+.servicos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: #ff1e26;
+}
+
+.card p {
+  font-size: 15px;
+  color: #ccc;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: #222;
+}
