@@ -1,35 +1,8 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - DigiVend</title>
+  <title>Cadastro - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,10 +15,10 @@
   </header>
 
   <main class="form-container">
-    <h2>Cadastro</h2>
+    <h2>Criar Conta</h2>
     <form>
       <label for="nome">Nome:</label>
-      <input type="text" id="nome" placeholder="Seu nome completo" required>
+      <input type="text" id="nome" placeholder="Digite seu nome completo" required>
 
       <label for="email">E-mail:</label>
       <input type="email" id="email" placeholder="Digite seu e-mail" required>
@@ -55,37 +28,15 @@
 
       <button type="submit">Cadastrar</button>
     </form>
+    <p style="margin-top: 15px;">
+      Já tem conta? <a href="login.html" style="color: #ffcc00;">Entre aqui</a>
+    </p>
   </main>
-</body>
-</html>
-++<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Cadastro</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-    input { padding: 10px; margin: 5px; width: 200px; }
-    button { padding: 10px 20px; background: #2980b9; color: white; border: none; border-radius: 5px; }
-    button:hover { background: #3498db; }
-  </style>
-</head>
-<body>
-  <h1>Cadastro</h1>
-  <form onsubmit="fazerCadastro(event)">
-    <input type="text" placeholder="Nome" required><br>
-    <input type="email" placeholder="Email" required><br>
-    <input type="password" placeholder="Senha" required><br>
-    <button type="submit">Cadastrar</button>
-  </form>
-  <p><a href="login.html">Já tem conta? Faça login</a></p>
+  <footer>
+    <p>© 2025 DigiVend - Todos os direitos reservados</p>
+  </footer>
 
-  <script>
-    function fazerCadastro(event) {
-      event.preventDefault();
-      alert("Cadastro realizado com sucesso! (simulação)");
-      window.location.href = "login.html";
-    }
-  </script>
 </body>
 </html>
+++
 ++
