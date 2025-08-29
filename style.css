@@ -20,7 +20,7 @@ body {
 header {
   background: #000000;
   color: #e50914; /* vermelho aceso */
-  padding: 15px 30px;
+  padding: 15px 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,14 +28,15 @@ header {
   z-index: 1000;
   border-bottom: 2px solid #e50914;
 
-  display: flex;                /* Ativa flexbox */
-  justify-content: space-between; /* Espaço entre logo e menu */
-  align-items: center;            /* Alinha tudo no centro vertical */
+  /* NOVO: centralização com flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* espaço entre logo e links */
 }
 
 header h1 {
   margin: 0;
-  font-size: 24px;
 }
 
 header nav {
