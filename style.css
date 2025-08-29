@@ -1,4 +1,4 @@
-/* Reset básico */
++/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -20,24 +20,32 @@ body {
 header {
   background: #000000;
   color: #e50914; /* vermelho aceso */
-  padding: 15px 20px;
-  text-align: center;
+  padding: 15px 30px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   border-bottom: 2px solid #e50914;
+
+  display: flex;                /* Ativa flexbox */
+  justify-content: space-between; /* Espaço entre logo e menu */
+  align-items: center;            /* Alinha tudo no centro vertical */
 }
 
 header h1 {
-  margin-bottom: 10px;
+  margin: 0;
+  font-size: 24px;
+}
+
+header nav {
+  display: flex;
+  gap: 20px; /* espaço entre os links */
 }
 
 header nav a {
   color: #ffffff;
   text-decoration: none;
-  margin: 0 15px;
   font-weight: bold;
   transition: color 0.3s;
 }
@@ -80,18 +88,23 @@ input::placeholder {
   color: #aaaaaa;
 }
 
-button {
-  padding: 12px;
+button,
+.btn {
+  padding: 12px 24px;
   background: #e50914;
   color: #fff;
   border: none;
   border-radius: 5px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  text-decoration: none; /* tira o sublinhado do link */
+  display: inline-block;
   transition: background 0.3s;
 }
 
-button:hover {
+button:hover,
+.btn:hover {
   background: #ff1e26; /* vermelho mais claro ao passar o mouse */
 }
 
@@ -106,4 +119,114 @@ footer {
   bottom: 0;
   width: 100%;
 }
-++
+.hero {
+  background: url('fundo.jpg') no-repeat center center/cover;
+  height: 100vh; /* ocupa 100% da altura da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+
+/* Botão principal */
+.btn {
+  display: inline-block;
+  background-color: #e50914; /* vermelho aceso */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff1c2e; /* vermelho mais claro no hover */
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* camada preta transparente */
+  z-index: 1;
+}
+
+.hero * {
+  position: relative;
+  z-index: 2;
+}
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ff1e26; /* vermelho destaque */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+/* ======== RESPONSIVIDADE ======== */
+
+/* Para telas menores que 768px (celulares) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Para telas bem pequenas (até 480px) */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 18px; /* menor que o seu 20px anterior */
+  }
+
+  header nav a {
+    font-size: 14px; /* links menores em celulares pequenos */
+  }
+}
+
