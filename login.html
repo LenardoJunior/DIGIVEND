@@ -17,15 +17,18 @@
 
   <main class="form-container">
     <h2>Login</h2>
-    <form onsubmit="fazerLogin(event)">
-  <label for="email">E-mail:</label>
-  <input type="email" id="email" required>
-
-  <label for="senha">Senha:</label>
-  <input type="password" id="senha" required>
-
-  <button type="submit">Entrar</button>
+    <form onsubmit="return loginUser(event)">
+    <input type="email" placeholder="Digite seu e-mail" required>
+    <input type="password" placeholder="Digite sua senha" required>
+    <button type="submit">Entrar</button>
 </form>
+<script>
+  function loginUser(event) {
+    event.preventDefault(); // impede a página de recarregar
+    // futuramente aqui entraremos com validação real no banco de dados
+    window.location.href = "dashboard.html"; 
+  }
+</script>
 
     <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
   </main>
