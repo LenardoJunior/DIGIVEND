@@ -1,6 +1,118 @@
+<nav>
+  <a href="index.html">Início</a>
+  <a href="login.html">Login</a>
+  <a href="cadastro.html">Cadastro</a>
+</nav>
+++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DIGIVEND — sua plataforma de produtos digitais</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- topo -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="DIGIVEND">
+        <span class="logo"></span> DIGIVEND
+      </a>
+      <nav class="menu">
+        <a href="#recursos">Recursos</a>
+        <a href="#planos">Planos</a>
+        <a href="login.html">Entrar</a>
+        <a href="cadastro.html">Cadastrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="container hero">
+    <h1>Venda seus <u>produtos digitais</u> com poucos cliques</h1>
+    <p>Crie ofertas, gere links de pagamento e entregue automaticamente e-books, cursos e licenças. Tudo rápido, bonito e do seu jeito.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="cadastro.html">Começar agora</a>
+      <a class="btn btn-outline" href="login.html">Já tenho conta</a>
+    </div>
+
+    <div class="grid" id="recursos">
+      <article class="card">
+        <h3>Links de pagamento</h3>
+        <p>Crie links e receba sem complicação.</p>
+      </article>
+      <article class="card">
+        <h3>Entrega automática</h3>
+        <p>Libere acesso ao conteúdo após o pagamento.</p>
+      </article>
+      <article class="card">
+        <h3>Área do cliente</h3>
+        <p>Seus compradores acessam tudo em um só lugar.</p>
+      </article>
+      <article class="card">
+        <h3>Relatórios</h3>
+        <p>Veja vendas, tickets e reembolsos.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- planos (placeholder) -->
+  <section class="container" id="planos">
+    <div class="grid">
+      <article class="card">
+        <h3>Start</h3>
+        <p>Perfeito para testar a plataforma.</p>
+      </article>
+      <article class="card">
+        <h3>Pro</h3>
+        <p>Para quem já vende todo dia.</p>
+      </article>
+      <article class="card">
+        <h3>Enterprise</h3>
+        <p>Recursos avançados e suporte prioritário.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="ano"></span> DIGIVEND — todos os direitos reservados
+  </footer>
+
+  <script>
+    // coloca o ano atual no rodapé
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+++<head>
   <meta charset="UTF-8">
   <title>Minha Plataforma</title>
   <style>
