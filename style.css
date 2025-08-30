@@ -123,6 +123,11 @@ button:hover {
   background: #333;
 }
 
+/* Sidebar quando estiver aberta */
+.sidebar.open {
+  left: 0;
+}
+
 /* Botão de menu (hambúrguer) */
 .menu-btn {
   font-size: 28px;
