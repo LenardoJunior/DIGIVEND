@@ -3,25 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clientes</title>
+  <title>Clientes - DigiVend</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <span class="menu-btn" onclick="toggleSidebar()">&#9776;</span>
-  <div class="sidebar" id="sidebar">
+  <div class="menu-toggle" onclick="toggleSidebar()">&#9776;</div>
+
+  <div id="sidebar" class="sidebar">
     <a href="dashboard.html">📊 Visão Geral</a>
     <a href="produtos.html">🛒 Produtos</a>
     <a href="vendas.html">💰 Vendas</a>
-    <a href="clientes.html" class="active">👥 Clientes</a>
+    <a href="clientes.html">👥 Clientes</a>
     <a href="gerenciador.html">⚙️ Gerenciador de Produtos</a>
     <a href="relatorios.html">📑 Relatórios</a>
     <a href="perfil.html">🙍 Perfil</a>
     <a href="config.html">⚙️ Configurações</a>
   </div>
-  <main class="content">
-    <h1>👥 Clientes</h1>
-    <p>Aqui você pode gerenciar seus clientes.</p>
-  </main>
-  <script src="script.js"></script>
+
+  <div class="main">
+    <h1>Clientes</h1>
+    <p>Aqui você pode visualizar seus clientes.</p>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+    }
+  </script>
 </body>
 </html>
