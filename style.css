@@ -851,30 +851,22 @@ footer {
   background: #ff1e26;
 }
 
-/* Sidebar escondida por padrão */
+/* Sidebar escondido inicialmente */
 .sidebar {
-  position: fixed;
-  left: -250px;
-  top: 0;
   width: 250px;
-  height: 100%;
-  background: #000;
-  padding-top: 60px;
+  background: #111;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -250px;
   transition: left 0.3s ease;
-  z-index: 1000;
+  padding-top: 60px;
 }
 
-/* Quando ativa */
+/* Quando ativo */
 .sidebar.active {
   left: 0;
-}
-
-.sidebar a {
-  display: block;
-  padding: 12px;
-  text-decoration: none;
-  color: #fff;
-  transition: background 0.3s;
 }
 
 .sidebar a:hover {
@@ -890,16 +882,16 @@ footer {
 
 /* Conteúdo principal */
 .main {
-  flex: 1;
-  padding: 20px;
+  margin-left: 0;
   transition: margin-left 0.3s ease;
-  margin-left: 60px; /* espaço quando sidebar está fechado */
+  padding: 20px;
 }
 
 /* Quando sidebar aberto */
-.sidebar.open ~ .main {
-  margin-left: 250px; /* espaço quando sidebar está aberto */
+.main.shifted {
+  margin-left: 250px;
 }
+
 /* ===== Ajuste de layout do dashboard ===== */
 .container {
   display: flex;
