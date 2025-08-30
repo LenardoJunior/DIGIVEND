@@ -128,19 +128,18 @@ button:hover {
   left: 0;
 }
 
-/* Botão de menu (hambúrguer) */
+/* Botão hambúrguer */
 .menu-btn {
-  font-size: 28px;
+  font-size: 26px;
   cursor: pointer;
-  color: white;
-  background: #e50914;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
   position: fixed;
   top: 15px;
-  left: 15px;
+  left: 20px;
   z-index: 3000;
+  color: white;
+  background: #e50914;
+  padding: 8px 12px;
+  border-radius: 5px;
 }
 
 .sidebar.show {
