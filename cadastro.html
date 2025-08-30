@@ -3,117 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - DigiVend</title>
+  <title>Cadastro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="form-container">
-    <h2>Crie sua conta</h2>
-    <form id="cadastroForm">
+    <h2>Criar nova conta</h2>
+    
+    <form action="dashboard.html" method="POST">
+      <label for="username">Nome de Usuário</label>
+      <input type="text" id="username" name="username" required placeholder="Escolha um nome de usuário">
 
-      <!-- Nome -->
-      <div class="form-group">
-        <label for="nome">Nome completo</label>
-        <input type="text" id="nome" name="nome" required>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required placeholder="Digite seu email válido">
+
+      <label for="phone">Número de Celular</label>
+      <input type="tel" id="phone" name="phone" required placeholder="Digite seu número de celular">
+
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" required placeholder="Crie uma senha forte">
+
+      <label for="confirm-password">Confirmar Senha</label>
+      <input type="password" id="confirm-password" name="confirm-password" required placeholder="Repita a senha">
+
+      <div class="checkbox">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">Aceito os Termos e Condições</label>
       </div>
 
-      <!-- Email -->
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required>
+      <div class="checkbox">
+        <input type="checkbox" id="notifications" name="notifications">
+        <label for="notifications">Receber notificações por e-mail ou celular</label>
       </div>
 
-      <!-- Telefone -->
-      <div class="form-group">
-        <label for="telefone">Número de telefone</label>
-        <input type="text" id="telefone" name="telefone" placeholder="Ex: 85999999999" required>
-      </div>
-
-      <!-- Senha -->
-      <div class="form-group">
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required>
-      </div>
-
-      <!-- Confirmar senha -->
-      <div class="form-group">
-        <label for="confirmarSenha">Confirmar Senha</label>
-        <input type="password" id="confirmarSenha" name="confirmarSenha" required>
-      </div>
-
-      <!-- Termos -->
-      <div class="form-group checkbox">
-        <input type="checkbox" id="termos" required>
-        <label for="termos">Aceito os <a href="#">termos e condições</a></label>
-      </div>
-
-      <!-- Notificações -->
-      <div class="form-group checkbox">
-        <input type="checkbox" id="notificacoes">
-        <label for="notificacoes">Quero receber notificações por e-mail ou celular</label>
-      </div>
-
-      <!-- Botão -->
       <button type="submit">Cadastrar</button>
     </form>
+
+    <div class="form-extra">
+      <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
+    </div>
   </div>
-
-  <!-- Script de validação -->
-  <script>
-    document.getElementById("cadastroForm").addEventListener("submit", function(e) {
-      e.preventDefault(); // evita envio automático
-
-      const nome = document.getElementById("nome").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const telefone = document.getElementById("telefone").value.trim();
-      const senha = document.getElementById("senha").value.trim();
-      const confirmarSenha = document.getElementById("confirmarSenha").value.trim();
-
-      // Regex de senha forte: min 8 caracteres, 1 maiúscula, 1 número e 1 símbolo
-      const senhaForte = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/;
-
-      // Validações
-      if (!nome) {
-        alert("Digite seu nome.");
-        return;
-      }
-
-      if (!email.includes("@") || !email.includes(".")) {
-        alert("Digite um email válido.");
-        return;
-      }
-
-      if (!telefone.match(/^\d{9,15}$/)) {
-        alert("Digite um número de telefone válido (somente dígitos, entre 9 e 15).");
-        return;
-      }
-
-      if (!senhaForte.test(senha)) {
-        alert("A senha deve ter pelo menos 8 caracteres, 1 letra maiúscula, 1 número e 1 caractere especial.");
-        return;
-      }
-
-      if (senha.toLowerCase().includes(nome.toLowerCase()) || senha.toLowerCase().includes(email.split("@")[0].toLowerCase())) {
-        alert("A senha não pode conter seu nome ou parte do email.");
-        return;
-      }
-
-      if (senha !== confirmarSenha) {
-        alert("As senhas não coincidem.");
-        return;
-      }
-
-      if (!document.getElementById("termos").checked) {
-        alert("Você precisa aceitar os termos e condições.");
-        return;
-      }
-
-      // Se passou em todas validações
-      alert("Cadastro validado com sucesso! Agora podemos avançar para a confirmação por email/telefone.");
-      this.submit();
-    });
-  </script>
 
 </body>
 </html>

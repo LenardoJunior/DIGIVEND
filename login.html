@@ -3,24 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Digivend</title>
+  <title>Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="form-container">
-    <h2>Login</h2>
+    <h2>Entrar na sua conta</h2>
+    
     <form action="dashboard.html" method="POST">
-      <input type="email" placeholder="Seu e-mail" required>
-      <input type="password" placeholder="Sua senha" required>
-      
-      <label>
-        <input type="checkbox"> Manter sessão iniciada
-      </label>
-      
+      <label for="username">Usuário ou Email</label>
+      <input type="text" id="username" name="username" required placeholder="Digite seu usuário ou email">
+
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+
+      <div class="checkbox">
+        <input type="checkbox" id="remember" name="remember">
+        <label for="remember">Manter sessão iniciada</label>
+      </div>
+
       <button type="submit">Entrar</button>
     </form>
-    <p>Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+
+    <div class="form-extra">
+      <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
   </div>
 
 </body>
