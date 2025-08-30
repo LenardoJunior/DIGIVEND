@@ -5,94 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      display: flex;
-      margin: 0;
-      background: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      width: 220px;
-      background: #000;
-      border-right: 2px solid #e50914;
-      height: 100vh;
-      padding: 20px;
-      position: fixed;
-      left: 0;
-      top: 0;
-    }
-
-    .sidebar h2 {
-      color: #e50914;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .sidebar a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-      margin: 5px 0;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-
-    .sidebar a:hover {
-      background: #e50914;
-    }
-
-    /* Conteúdo principal */
-    .main {
-      margin-left: 240px;
-      padding: 20px;
-      width: 100%;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #1a1a1a;
-      border: 1px solid #e50914;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      background: #222;
-    }
-
-    .card h3 {
-      color: #e50914;
-    }
-  </style>
 </head>
 <body>
+  <!-- Botão do menu -->
+  <button class="menu-toggle">☰</button>
 
-  <body>
   <!-- Sidebar -->
-<!-- Botão para abrir a sidebar -->
-<div class="menu-toggle" onclick="toggleSidebar()">☰</div>
   <div class="sidebar">
     <h2>DIGIVEND</h2>
-    <a href="dashboard.html">📊 Visão Geral</a>
-    <a href="produtos.html">🛒 Produtos</a>
-    <a href="vendas.html">💰 Vendas</a>
-    <a href="clientes.html">👥 Clientes</a>
-    <a href="gerenciador.html">⚙️ Gerenciador de Produtos</a>
-    <a href="relatorios.html">📑 Relatórios</a>
-    <a href="perfil.html">🙍 Perfil</a>
-    <a href="configuracoes.html">⚙️ Configurações</a>
+    <a href="#">Visão Geral</a>
+    <a href="#">Produtos</a>
+    <a href="#">Vendas</a>
+    <a href="#">Clientes</a>
+    <a href="#">Gerenciador de Produtos</a>
+    <a href="#">Relatórios</a>
+    <a href="#">Perfil</a>
+    <a href="#">Configurações</a>
   </div>
 
   <!-- Conteúdo Principal -->
@@ -115,69 +43,7 @@
       </div>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
-
-  <!-- Seção de produtos -->
-  <section class="produtos-dashboard">
-    <h2>Gerenciar Produtos</h2>
-    <button class="adicionar">+ Adicionar Produto</button>
-    <table>
-      <thead>
-        <tr>
-          <th>Imagem</th>
-          <th>Nome</th>
-          <th>Preço</th>
-          <th>Estoque</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="https://via.placeholder.com/60" alt="Produto"></td>
-          <td>Produto Exemplo</td>
-          <td>R$ 99,90</td>
-          <td>10</td>
-          <td>
-            <button class="editar">Editar</button>
-            <button class="remover">Remover</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-</div>
-
-<!-- Rodapé -->
-<footer>
-  <p>© 2025 DIGIVEND - Todos os direitos reservados.</p>
-</footer>
-
-<script>
-  function toggleSidebar() {
-    document.querySelector('.sidebar').classList.toggle('active');
-  }
-</script>
-
-</body>
-<!-- Botão de menu -->
-<div class="menu-btn" onclick="toggleSidebar()">☰</div>
-
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <h2>Menu</h2>
-  <a href="#">Visão Geral</a>
-  <a href="#">Produtos</a>
-  <a href="#">Vendas</a>
-  <a href="#">Clientes</a>
-  <a href="#">Gerenciador de Produtos</a>
-  <a href="#">Relatórios</a>
-  <a href="#">Perfil</a>
-  <a href="#">Configurações</a>
-</div>
-<script>
-  function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("active");
-  }
-</script>
-
 </html>
