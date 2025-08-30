@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Compras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+
+  <div class="sidebar" id="sidebar">
+    <a href="marketplace.html">Início</a>
+    <a href="minhas-compras.html" class="active">Minhas Compras</a>
+    <a href="cancelado.html">Cancelado / Refundado</a>
+    <a href="minha-conta.html">Minha Conta</a>
+    <a href="loja.html">Comprar um Produto</a>
+    <a href="criar-produto.html">Criar meu Produto e Vender</a>
+  </div>
+
+  <div class="main">
+    <h1>Minhas Compras</h1>
+    <p>Aqui aparecerão os produtos que você comprou.</p>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+    }
+  </script>
+</body>
+</html>

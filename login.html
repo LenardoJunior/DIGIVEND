@@ -22,33 +22,28 @@
       <p>Não tem uma conta? <a href="cadastro.html">Cadastrar-se</a></p>
     </form>
 
-  <script>
-    function validarLogin() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+<script>
+  function redirecionarLogin() {
+    // verificar tipo de usuário
+    const tipo = localStorage.getItem("tipoUsuario");
 
-      if (!email || !password) {
-        alert("Preencha todos os campos!");
-        return false;
-      }
-
-      // Simulação de login bem-sucedido
-      if (document.getElementById("rememberMe").checked) {
-        localStorage.setItem("usuarioLogado", email);
-      } else {
-        sessionStorage.setItem("usuarioLogado", email);
-      }
-
-      return true; // permite redirecionar para dashboard
+    if (tipo === "vendedor") {
+      window.location.href = "dashboard.html";
+    } else if (tipo === "comprador") {
+      window.location.href = "marketplace.html";
+    } else {
+      // se não escolheu nada, manda pro dashboard por padrão
+      window.location.href = "dashboard.html";
     }
+  }
 
-    // Mantém usuário logado se "lembrar-me" estiver ativado
-    window.onload = function() {
-      const usuario = localStorage.getItem("usuarioLogado");
-      if (usuario) {
-        window.location.href = "dashboard.html";
-      }
-    };
-  </script>
+  // simulação do login ao clicar em "Entrar"
+  document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    // aqui futuramente vamos validar usuário e senha
+    redirecionarLogin();
+  });
+</script>
+
 </body>
 </html>

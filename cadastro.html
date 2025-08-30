@@ -26,8 +26,9 @@
 <!-- Escolha do perfil -->
 <div class="perfil-escolha">
   <p>O que deseja fazer?</p>
-  <button type="button" onclick="window.location.href='dashboard.html'">Vender Produtos</button>
-  <button type="button" onclick="window.location.href='marketplace.html'">Comprar Produtos</button>
+  <button type="button" onclick="escolherOpcao('vendedor')">Vender Produtos</button>
+<button type="button" onclick="escolherOpcao('comprador')">Comprar Produtos</button>
+
 </div>
 
       <button type="submit">Cadastrar</button>
@@ -63,5 +64,14 @@
       return true;
     }
   </script>
+
+<script>
+  function escolherOpcao(tipo) {
+    // salvar escolha (vendedor ou comprador)
+    localStorage.setItem("tipoUsuario", tipo);
+    // redirecionar para login
+    window.location.href = "login.html";
+  }
+</script>
 </body>
 </html>
