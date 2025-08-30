@@ -880,3 +880,41 @@ footer {
 .sidebar a:hover {
   background: #e50914;
 }
+/* Layout principal */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #111; /* fundo do dashboard */
+  color: #fff;
+}
+
+/* Conteúdo principal */
+.main {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  margin-left: 60px; /* espaço quando sidebar está fechado */
+}
+
+/* Quando sidebar aberto */
+.sidebar.open ~ .main {
+  margin-left: 250px; /* espaço quando sidebar está aberto */
+}
+/* ===== Ajuste de layout do dashboard ===== */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #111; /* fundo do dashboard */
+  color: #fff;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  margin-left: 60px; /* espaço quando sidebar está fechado */
+}
+
+.sidebar.open ~ .main {
+  margin-left: 250px; /* espaço quando sidebar está aberto */
+}
