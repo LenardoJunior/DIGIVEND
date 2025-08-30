@@ -3,22 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - DIGIVEND</title>
+  <title>Login - Digivend</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="form-container">
+  <div class="login-container">
     <h2>Entrar</h2>
-    <form action="dashboard.html" method="GET">
-      <label for="username">Usuário</label>
-      <input type="text" id="username" name="username" required>
 
-      <label for="password">Senha</label>
-      <input type="password" id="password" name="password" required>
+    <form id="loginForm">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" required>
+
+      <label>
+        <input type="checkbox" id="lembrarSessao">
+        Manter sessão iniciada
+      </label>
 
       <button type="submit">Entrar</button>
     </form>
-    <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+
+    <p id="mensagem"></p>
+    <p>Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
   </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.toLowerCase();
+      const senha = document.getElementById("senha").value;
+      const lembrarSessao = document.getElementById("lembrarSessao").checked;
+      const mensagem = document.getElementById("mensagem");
+
+      // 🚨 Aqui deveria verificar com banco de dados (no futuro)
+      // Simulação de usuário salvo no localStorage
+      const usuarioSalvo = JSON.parse(localStorage.getItem("usuario"));
+
+      if (!usuarioSalvo) {
+        mensagem.innerText = "⚠️ Nenhum usuário cadastrado encontrado.";
+        mensagem.style.color = "red";
+        return;
+      }
+
+      if (email === usuarioSalvo.email && senha === usuarioSalvo.senha) {
+        mensagem.innerText = "✅ Login realizado com sucesso!";
+        mensagem.style.color = "green";
+
+        // Guardar sessão
+        if (lembrarSessao) {
+          localStorage.setItem("sessaoAtiva", JSON.stringify(usuarioSalvo));
+        } else {
+          sessionStorage.setItem("sessaoAtiva", JSON.stringify(usuarioSalvo));
+        }
+
+        // Redirecionar para o dashboard
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1500);
+      } else {
+        mensagem.innerText = "⚠️ E-mail ou senha incorretos.";
+        mensagem.style.color = "red";
+      }
+    });
+
+    // 🔄 Verificar se já existe sessão ativa
+    window.onload = function() {
+      const sessao = JSON.parse(localStorage.getItem("sessaoAtiva")) || JSON.parse(sessionStorage.getItem("sessaoAtiva"));
+      if (sessao) {
+        window.location.href = "dashboard.html";
+      }
+    };
+  </script>
 </body>
 </html>
