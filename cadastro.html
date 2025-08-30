@@ -7,34 +7,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="form-container">
-    <h2>Criar Conta</h2>
-    <form id="cadastroForm" action="dashboard.html" method="POST" onsubmit="return validarCadastro()">
-      
-      <label for="username">Nome de Usuário</label>
-      <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
-      
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-      
-      <label for="phone">Número de Telefone</label>
-      <input type="tel" id="phone" name="phone" placeholder="Digite seu número" required>
-      
-      <label for="password">Senha</label>
-      <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-      
-      <label for="confirmPassword">Confirmar Senha</label>
-      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
-      
-      <div class="checkbox-group">
-        <label><input type="checkbox" id="terms" required> Aceito os termos e condições</label><br>
-        <label><input type="checkbox" id="notify"> Desejo receber notificações por e-mail ou celular</label>
-      </div>
-      
-      <button type="submit">Cadastrar</button>
-    </form>
-    <p>Já tem conta? <a href="login.html">Entrar</a></p>
-  </div>
+<form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+  <h2>Criar Conta</h2>
+  <input type="text" placeholder="Nome de Usuário" required>
+  <input type="email" placeholder="Email" required>
+  <input type="tel" placeholder="Número de celular" required>
+  <input type="password" placeholder="Senha" required>
+  
+  <label>
+    <input type="checkbox" required> Aceito os Termos e Condições
+  </label>
+  
+  <label>
+    <input type="checkbox"> Receber notificações por email/telefone
+  </label>
+
+  <button type="submit">Cadastrar</button>
+
+  <p>Já tem conta? <a href="login.html">Faça login aqui</a></p>
+</form>
 
   <script>
     function validarCadastro() {

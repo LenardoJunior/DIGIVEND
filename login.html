@@ -7,24 +7,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="form-container">
-    <h2>Entrar na Conta</h2>
-    <form id="loginForm" action="dashboard.html" method="POST" onsubmit="return validarLogin()">
-      
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-      
-      <label for="password">Senha</label>
-      <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-      
-      <div class="checkbox-group">
-        <label><input type="checkbox" id="rememberMe"> Manter sessão iniciada</label>
-      </div>
-      
-      <button type="submit">Entrar</button>
-    </form>
-    <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
-  </div>
+<form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+  <h2>Entrar</h2>
+  <input type="text" placeholder="Usuário ou Email" required>
+  <input type="password" placeholder="Senha" required>
+  
+  <label>
+    <input type="checkbox"> Manter sessão iniciada
+  </label>
+
+  <button type="submit">Entrar</button>
+
+  <p>Ainda não tem conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+</form>
 
   <script>
     function validarLogin() {
