@@ -1,113 +1,31 @@
-/* ======== ESTILOS GERAIS ======== */
+/* ======== RESET ======== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #121212;
-  color: #ffffff;
-  line-height: 1.6;
-  overflow-x: hidden;
+  background: #f4f4f4;
+  color: #333;
 }
 
-/* ======== HEADER ======== */
-header {
-  background: #000000;
-  color: #e50914;
-  padding: 15px 20px;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 2px solid #e50914;
-}
-
-header h1 {
-  margin-bottom: 10px;
-}
-
-header nav a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-header nav a:hover {
-  color: #e50914;
-}
-
-/* ======== HERO (tela inicial) ======== */
-.hero {
-  height: 100vh; /* ocupa a tela toda */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centraliza vertical */
-  align-items: center; /* centraliza horizontal */
-  text-align: center;
-  background: url('https://picsum.photos/1920/1080?blur=2') no-repeat center center/cover;
-  color: #fff;
-  padding: 20px;
-  margin-top: 60px; /* espaço por causa do header */
-}
-
-.hero h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 18px;
-  max-width: 600px;
-  margin-bottom: 20px;
-}
-
-.hero .btn {
-  padding: 12px 20px;
-  background: #e50914;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.hero .btn:hover {
-  background: #ff1e26;
-}
-
-/* ======== BOTÕES ======== */
-button {
-  padding: 12px;
-  background: #e50914;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: #ff1e26;
-}
-
-/* ======== SIDEBAR ======== */
+/* Sidebar padrão */
 .sidebar {
   height: 100%;
   width: 250px;
   position: fixed;
   top: 0;
-  left: -250px; /* escondida */
+  left: -250px;
   background: #1e1e1e;
   padding-top: 60px;
   transition: 0.3s;
   z-index: 2000;
+}
+
+.sidebar.show {
+  left: 0; /* quando abre */
 }
 
 .sidebar a {
@@ -123,170 +41,38 @@ button:hover {
   background: #333;
 }
 
-/* Sidebar quando estiver aberta */
-.sidebar.open {
-  left: 0;
-}
-
-/* Botão hambúrguer */
+/* Botão Hamburguer */
 .menu-btn {
   font-size: 26px;
-  cursor: pointer;
   position: fixed;
   top: 15px;
-  left: 20px;
-  z-index: 3000;
+  left: 15px;
+  background: #1e1e1e;
   color: white;
-  background: #e50914;
+  border: none;
   padding: 8px 12px;
-  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3000;
+  border-radius: 6px;
 }
 
-.sidebar.show {
-  left: 0;
-}
-
-/* ======== CONTEÚDO DO DASHBOARD ======== */
+/* Conteúdo principal */
 .main {
   margin-left: 0;
   padding: 20px;
   transition: margin-left 0.3s;
-  margin-top: 80px; /* abaixo do header */
 }
 
 .cards {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
   margin-top: 20px;
 }
 
 .card {
-  flex: 1 1 200px;
-  background: #1e1e1e;
+  background: #f5f5f5;
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* ======== RODAPÉ ======== */
-footer {
-  background: #000000;
-  color: #aaaaaa;
-  text-align: center;
-  padding: 15px;
-  border-top: 2px solid #e50914;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-/* ======== RESPONSIVIDADE ======== */
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 28px;
-  }
-  .hero p {
-    font-size: 16px;
-  }
-  header nav a {
-    display: block;
-    margin: 8px 0;
-  }
-  .cards {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h2 {
-    font-size: 22px;
-  }
-  .hero p {
-    font-size: 14px;
-  }
-  header h1 {
-    font-size: 18px;
-  }
-}
-/* ======== FORMULÁRIOS (Login & Cadastro) ======== */
-.form-container {
-  max-width: 400px;
-  margin: 80px auto; /* centralizado */
-  padding: 30px;
-  background: #1e1e1e;
-  color: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-
-.form-container h2 {
-  margin-bottom: 20px;
-  color: #e50914; /* vermelho impactante */
-}
-
-.form-container label {
-  display: block;
-  margin: 10px 0 5px;
-  text-align: left;
-  font-size: 14px;
-  color: #ddd;
-}
-
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="password"],
-.form-container input[type="tel"] {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-.form-container input:focus {
-  outline: 2px solid #e50914;
-}
-
-.form-container button {
-  width: 100%;
-  padding: 12px;
-  background: #e50914;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.form-container button:hover {
-  background: #b20710;
-}
-
-.form-container p {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #ccc;
-}
-
-.form-container a {
-  color: #e50914;
-  text-decoration: none;
-}
-
-.form-container a:hover {
-  text-decoration: underline;
-}
-
-/* Checkbox alinhado */
-.checkbox-group {
-  margin-bottom: 15px;
-  text-align: left;
-  font-size: 14px;
-  color: #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1;
 }

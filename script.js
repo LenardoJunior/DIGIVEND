@@ -1,8 +1,4 @@
-// Seleciona o botão e o sidebar
-const menuToggle = document.querySelector(".menu-toggle");
-const sidebar = document.querySelector(".sidebar");
-
-// Adiciona evento de clique no botão
-menuToggle.addEventListener("click", () => {
-  sidebar.classList.toggle("active");
-});
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle("show");
+}

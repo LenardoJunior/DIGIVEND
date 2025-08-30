@@ -3,61 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Dashboard - DigiVend</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Botão de menu -->
-  <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+
+  <!-- Botão Hamburguer -->
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
   <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
+  <div id="sidebar" class="sidebar">
     <a href="dashboard.html">📊 Visão Geral</a>
     <a href="produtos.html">🛒 Produtos</a>
     <a href="vendas.html">💰 Vendas</a>
     <a href="clientes.html">👥 Clientes</a>
     <a href="gerenciador.html">⚙️ Gerenciador de Produtos</a>
-    <a href="relatorios.html">📈 Relatórios</a>
+    <a href="relatorios.html">📑 Relatórios</a>
     <a href="perfil.html">🙍 Perfil</a>
-    <a href="configuracoes.html">🔧 Configurações</a>
+    <a href="config.html">⚙️ Configurações</a>
+    <a href="index.html">⬅️ Sair</a>
   </div>
 
-  <!-- Conteúdo principal -->
-  <div class="main" id="main">
+  <!-- Conteúdo Principal -->
+  <div class="main">
     <h1>Bem-vindo ao Dashboard</h1>
     <p>Aqui você acompanha suas vendas e gerencia seus produtos.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>📊 Vendas do Dia</h3>
+        <p>R$ 0,00</p>
+      </div>
+      <div class="card">
+        <h3>🛒 Produtos Ativos</h3>
+        <p>0</p>
+      </div>
+      <div class="card">
+        <h3>👥 Novos Clientes</h3>
+        <p>0</p>
+      </div>
+    </div>
   </div>
 
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      const main = document.getElementById("main");
-
-      if (sidebar.style.left === "0px") {
-        sidebar.style.left = "-250px";
-        main.style.marginLeft = "0";
-      } else {
-        sidebar.style.left = "0px";
-        main.style.marginLeft = "250px";
-      }
-    }
-  </script>
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
 </html>
-
-  <!-- Botão de Menu (hambúrguer) -->
-  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <h2>Menu</h2>
-    <a href="#">Visão Geral</a>
-    <a href="#">Produtos</a>
-    <a href="#">Vendas</a>
-    <a href="#">Clientes</a>
-    <a href="#">Gerenciador de Produtos</a>
-    <a href="#">Relatórios</a>
-    <a href="#">Perfil</a>
-    <a href="#">Configurações</a>
-  </div>
-
