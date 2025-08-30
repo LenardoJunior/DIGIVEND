@@ -3,47 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro</title>
+  <title>Cadastro - DigiVend</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="form-container">
-    <h2>Criar nova conta</h2>
-    
-    <form action="dashboard.html" method="POST">
+    <h2>Criar Conta</h2>
+    <form id="cadastroForm" action="dashboard.html" method="POST" onsubmit="return validarCadastro()">
+      
       <label for="username">Nome de Usuário</label>
-      <input type="text" id="username" name="username" required placeholder="Escolha um nome de usuário">
-
+      <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
+      
       <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required placeholder="Digite seu email válido">
-
-      <label for="phone">Número de Celular</label>
-      <input type="tel" id="phone" name="phone" required placeholder="Digite seu número de celular">
-
+      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      
+      <label for="phone">Número de Telefone</label>
+      <input type="tel" id="phone" name="phone" placeholder="Digite seu número" required>
+      
       <label for="password">Senha</label>
-      <input type="password" id="password" name="password" required placeholder="Crie uma senha forte">
-
-      <label for="confirm-password">Confirmar Senha</label>
-      <input type="password" id="confirm-password" name="confirm-password" required placeholder="Repita a senha">
-
-      <div class="checkbox">
-        <input type="checkbox" id="terms" name="terms" required>
-        <label for="terms">Aceito os Termos e Condições</label>
+      <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+      
+      <label for="confirmPassword">Confirmar Senha</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
+      
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="terms" required> Aceito os termos e condições</label><br>
+        <label><input type="checkbox" id="notify"> Desejo receber notificações por e-mail ou celular</label>
       </div>
-
-      <div class="checkbox">
-        <input type="checkbox" id="notifications" name="notifications">
-        <label for="notifications">Receber notificações por e-mail ou celular</label>
-      </div>
-
+      
       <button type="submit">Cadastrar</button>
     </form>
-
-    <div class="form-extra">
-      <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
-    </div>
+    <p>Já tem conta? <a href="login.html">Entrar</a></p>
   </div>
 
+  <script>
+    function validarCadastro() {
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      // Verifica senha igual
+      if (password !== confirmPassword) {
+        alert("As senhas não coincidem!");
+        return false;
+      }
+
+      // Regras de senha forte
+      const senhaForte = /^(?=.*[A-Z])(?=.*[0-9!@#\$%\^&\*]).{8,}$/;
+      if (!senhaForte.test(password)) {
+        alert("A senha deve ter pelo menos 8 caracteres, uma letra maiúscula e um número ou caractere especial.");
+        return false;
+      }
+
+      // Evitar que senha contenha email ou username
+      if (password.toLowerCase().includes(username.toLowerCase()) || password.toLowerCase().includes(email.split("@")[0].toLowerCase())) {
+        alert("A senha não pode conter o nome de usuário ou parte do e-mail.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
 </body>
 </html>
