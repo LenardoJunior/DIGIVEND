@@ -910,3 +910,14 @@ footer {
 .sidebar.open ~ .main {
   margin-left: 250px; /* espaço quando sidebar está aberto */
 }
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1100; /* acima do sidebar */
+}
