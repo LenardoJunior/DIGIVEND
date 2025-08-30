@@ -1,108 +1,79 @@
-/* ======== ESTILOS GERAIS ======== */
+/* ======== GERAL ======== */
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  background: #f4f4f9;
-  color: #333;
+  background: #121212; /* Preto elegante */
+  color: #ffffff;
 }
 
-/* ======== HEADER ======== */
-header {
-  background: linear-gradient(90deg, #4e54c8, #8f94fb);
-  color: #fff;
-  padding: 15px 20px;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 28px;
-}
-
-/* ======== HERO (PÁGINA INICIAL) ======== */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: #fff;
-}
-
-.hero h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 18px;
-  color: #555;
-}
-
-/* ======== FORMULÁRIOS LOGIN / CADASTRO ======== */
-.form-container {
+/* ======== CONTAINERS DE LOGIN & CADASTRO ======== */
+.container {
   width: 100%;
   max-width: 400px;
-  margin: 40px auto;
-  padding: 25px;
-  background: #fff;
+  margin: 80px auto;
+  background: #1c1c1c;
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
 }
 
-.form-container h2 {
+.container h2 {
   text-align: center;
+  color: #e50914; /* Vermelho destaque */
   margin-bottom: 20px;
-  color: #4e54c8;
 }
 
-.form-container input,
-.form-container select {
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="password"],
+.container input[type="tel"] {
   width: 100%;
   padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-.form-container button {
-  width: 100%;
-  padding: 12px;
-  background: #4e54c8;
-  color: #fff;
-  font-size: 16px;
+  margin: 10px 0;
   border: none;
   border-radius: 8px;
+  background: #2a2a2a;
+  color: #ffffff;
+  outline: none;
+}
+
+.container input::placeholder {
+  color: #aaa;
+}
+
+.container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #e50914;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.form-container button:hover {
-  background: #3b3fc0;
+.container button:hover {
+  background: #ff1a1a;
+  transform: scale(1.03);
 }
 
-/* ======== DASHBOARD ======== */
-.main {
-  padding: 20px;
-  margin-left: 260px; /* espaço pro sidebar */
-  transition: margin-left 0.3s;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
+.container p {
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 15px;
+  color: #bbb;
 }
 
-.card h3 {
-  margin-bottom: 10px;
-  color: #4e54c8;
+.container p a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+.container p a:hover {
+  text-decoration: underline;
 }
 
 /* ======== SIDEBAR ======== */
@@ -111,20 +82,17 @@ header h1 {
   width: 250px;
   position: fixed;
   top: 0;
-  left: -250px; /* escondido */
-  background: #1e1e1e;
+  left: -250px; /* escondida */
+  background: #1c1c1c;
   padding-top: 60px;
   transition: 0.3s;
   z-index: 2000;
-}
-
-.sidebar.active {
-  left: 0;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar a {
   display: block;
-  color: #fff;
+  color: #ffffff;
   padding: 12px 20px;
   text-decoration: none;
   font-size: 18px;
@@ -132,57 +100,65 @@ header h1 {
 }
 
 .sidebar a:hover {
-  background: #333;
+  background: #e50914;
+  color: #fff;
+  padding-left: 30px;
 }
 
-/* ======== BOTÃO HAMBÚRGUER ======== */
-#menu-btn {
-  font-size: 26px;
-  background: #4e54c8;
-  color: #fff;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 8px;
+/* ======== BOTÃO HAMBURGUER ======== */
+#menuBtn {
+  font-size: 30px;
   cursor: pointer;
+  color: #fff;
   position: fixed;
   top: 15px;
   left: 15px;
-  z-index: 2100;
-  transition: background 0.3s;
+  z-index: 3000;
+  background: #e50914;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
 }
 
-#menu-btn:hover {
-  background: #3b3fc0;
+#menuBtn:hover {
+  background: #ff1a1a;
 }
 
-/* Ajuste do conteúdo quando sidebar está aberto */
-.sidebar.active ~ .main {
-  margin-left: 260px;
+/* ======== DASHBOARD ======== */
+.main {
+  margin-left: 0;
+  padding: 20px;
+  transition: margin-left 0.3s;
 }
 
-/* ======== RESPONSIVIDADE ======== */
-@media (max-width: 768px) {
-  .main {
-    margin-left: 0;
-    padding: 15px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
+.main.active {
+  margin-left: 250px; /* Ajusta quando sidebar aparece */
 }
 
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 20px;
-  }
-
-  .hero h2 {
-    font-size: 24px;
-  }
-
-  .hero p {
-    font-size: 14px;
-  }
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
+.card {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #e50914;
+}
+
+.card p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}

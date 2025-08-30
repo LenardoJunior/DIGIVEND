@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - DigiVend</title>
+  <title>Cadastro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
-  <h2>Criar Conta</h2>
-  <input type="text" placeholder="Nome de Usuário" required>
-  <input type="email" placeholder="Email" required>
-  <input type="tel" placeholder="Número de celular" required>
-  <input type="password" placeholder="Senha" required>
-  
-  <label>
-    <input type="checkbox" required> Aceito os Termos e Condições
-  </label>
-  
-  <label>
-    <input type="checkbox"> Receber notificações por email/telefone
-  </label>
 
-  <button type="submit">Cadastrar</button>
+  <div class="container">
+    <h2>Criar Conta</h2>
+    <form action="dashboard.html" method="GET">
+      <input type="text" placeholder="Nome de usuário" required>
+      <input type="email" placeholder="Digite seu email" required>
+      <input type="tel" placeholder="Número de celular" required>
+      <input type="password" placeholder="Senha (mínimo 8 caracteres)" required>
+      
+      <label>
+        <input type="checkbox" required> Aceito os termos e condições
+      </label>
+      <label>
+        <input type="checkbox"> Receber notificações via email ou celular
+      </label>
 
-  <p>Já tem conta? <a href="login.html">Faça login aqui</a></p>
-</form>
+      <button type="submit">Cadastrar</button>
+      <p>Já tem conta? <a href="login.html">Entrar</a></p>
+    </form>
 
   <script>
     function validarCadastro() {

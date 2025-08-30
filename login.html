@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - DigiVend</title>
+  <title>Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
-  <h2>Entrar</h2>
-  <input type="text" placeholder="Usuário ou Email" required>
-  <input type="password" placeholder="Senha" required>
-  
-  <label>
-    <input type="checkbox"> Manter sessão iniciada
-  </label>
 
-  <button type="submit">Entrar</button>
+  <div class="container">
+    <h2>Entrar</h2>
+    <form action="dashboard.html" method="GET">
+      <input type="email" placeholder="Digite seu email" required>
+      <input type="password" placeholder="Digite sua senha" required>
+      
+      <label>
+        <input type="checkbox"> Manter sessão iniciada
+      </label>
 
-  <p>Ainda não tem conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
-</form>
+      <button type="submit">Login</button>
+      <p>Não tem uma conta? <a href="cadastro.html">Cadastrar-se</a></p>
+    </form>
 
   <script>
     function validarLogin() {
