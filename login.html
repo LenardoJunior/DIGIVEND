@@ -2,38 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>DIGIVEND</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="login.html">Login</a>
-      <a href="cadastro.html">Cadastro</a>
-    </nav>
-  </header>
+  <div class="form-container">
+    <h2>Entrar</h2>
+    <form action="dashboard.html" method="GET">
+      <label for="username">Usuário</label>
+      <input type="text" id="username" name="username" required>
 
-  <main class="form-container">
-    <h2>Login</h2>
-    <form onsubmit="return loginUser(event)">
-    <input type="email" placeholder="Digite seu e-mail" required>
-    <input type="password" placeholder="Digite sua senha" required>
-    <button type="submit">Entrar</button>
-</form>
-<script>
-  function loginUser(event) {
-    event.preventDefault(); // impede a página de recarregar
-    // futuramente aqui entraremos com validação real no banco de dados
-    window.location.href = "dashboard.html"; 
-  }
-</script/>
-<p id="suporte-msg" style="display:none; margin-top: 15px; color: red;">
-  🚫 Sua conta está bloqueada. <br>
-  <a href="suporte.html" class="btn">Falar com o Suporte</a>
-</p>
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" required>
 
+      <button type="submit">Entrar</button>
+    </form>
+    <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+  </div>
 </body>
 </html>
-
