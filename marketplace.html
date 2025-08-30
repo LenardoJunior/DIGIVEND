@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Botão hamburguer -->
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar Comprador -->
+  <div id="sidebar" class="sidebar">
+    <a href="marketplace.html">Loja</a>
+    <a href="meus_pedidos.html">Meus Pedidos</a>
+    <a href="favoritos.html">Favoritos</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="configuracoes.html">Configurações</a>
+    <a href="login.html">Sair</a>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main class="content">
+    <h1>Bem-vindo ao Marketplace</h1>
+    <p>Aqui ficará a lista de produtos disponíveis para compra.</p>
+  </main>
+
+  <!-- Script para abrir/fechar o menu -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-250px";
+      } else {
+        sidebar.style.left = "0px";
+      }
+    }
+  </script>
+</body>
+</html>
