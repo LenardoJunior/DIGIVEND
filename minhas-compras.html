@@ -46,11 +46,14 @@
       <p>Por período</p>
     </div>
 
-    <button class="ordenar-btn">Mais velho ▾</button>
-    <div class="ordenar-options">
-      <p>Mais novo</p>
-      <p>Ordem alfabética A-Z</p>
-    </div>
+<!-- Filtros de ordenação -->
+<div class="ordenacao">
+  <button id="maisVelhoBtn" class="ordenar-btn">Mais velho ⌄</button>
+  <div id="menuOrdenar" class="menu-ordenar">
+    <button class="ordenar-opcao">Mais novo</button>
+    <button class="ordenar-opcao">Ordem alfabética A-Z</button>
+  </div>
+</div>
 
     <!-- Caso sem compras -->
     <div class="sem-compras">
@@ -63,5 +66,23 @@
   </div>
 
   <script src="script.js"></script>
+
+<script>
+  const maisVelhoBtn = document.getElementById("maisVelhoBtn");
+  const menuOrdenar = document.getElementById("menuOrdenar");
+
+  maisVelhoBtn.addEventListener("click", () => {
+    menuOrdenar.style.display = 
+      menuOrdenar.style.display === "block" ? "none" : "block";
+  });
+
+  // Fecha o menu se clicar fora
+  window.addEventListener("click", function(e) {
+    if (!maisVelhoBtn.contains(e.target) && !menuOrdenar.contains(e.target)) {
+      menuOrdenar.style.display = "none";
+    }
+  });
+</script>
+
 </body>
 </html>

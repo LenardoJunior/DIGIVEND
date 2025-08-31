@@ -212,3 +212,42 @@ body {
 .secure-btn:hover {
   background: darkred;
 }
+.ordenacao {
+  margin-top: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.ordenar-btn {
+  background: #e63946; /* vermelho */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-ordenar {
+  display: none;
+  position: absolute;
+  background: #fff;
+  min-width: 160px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.menu-ordenar .ordenar-opcao {
+  background: none;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-ordenar .ordenar-opcao:hover {
+  background: #f1f1f1;
+}
