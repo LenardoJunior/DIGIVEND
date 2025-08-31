@@ -3,30 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minhas Compras</title>
+  <title>Minhas Compras - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .header-compras {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      background: #1e1e1e;
+      color: #fff;
+    }
+    .header-compras h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .compras-container {
+      padding: 20px;
+    }
+    .filtros {
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .filtros button {
+      background: #e63946;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .search-bar {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin: 15px 0;
+    }
+    .btn-filter {
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .filter-options, .order-options {
+      display: none;
+      margin: 10px 0;
+      padding-left: 15px;
+    }
+    .filter-options p, .order-options p {
+      margin: 5px 0;
+      cursor: pointer;
+      color: #444;
+    }
+    .order-btn {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    .carrinho-vazio {
+      text-align: center;
+      margin-top: 30px;
+      color: #666;
+    }
+    .carrinho-vazio img {
+      width: 120px;
+      opacity: 0.6;
+      margin-bottom: 15px;
+    }
+    .btn-red {
+      display: inline-block;
+      background: #e63946;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <span class="menu-btn" onclick="toggleSidebar()">☰</span>
 
-  <div class="sidebar" id="sidebar">
-    <a href="marketplace.html">Início</a>
-    <a href="minhas-compras.html" class="active">Minhas Compras</a>
-    <a href="cancelado.html">Cancelado / Refundado</a>
+  <!-- HEADER -->
+  <div class="header-compras">
+    <button class="openbtn" onclick="toggleSidebar()">☰</button>
+    <h2>DIGIVEND</h2>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" onclick="toggleSidebar()">✖ Fechar</a>
+    <a href="comprador.html">Início</a>
+    <a href="minhas-compras.html">Minhas Compras</a>
+    <a href="arquivado.html">Arquivado</a>
+    <a href="cancelado.html">Cancelado/Refundado</a>
     <a href="minha-conta.html">Minha Conta</a>
     <a href="loja.html">Comprar um Produto</a>
     <a href="criar-produto.html">Criar meu Produto e Vender</a>
   </div>
 
-  <div class="main">
-    <h1>Minhas Compras</h1>
-    <p>Aqui aparecerão os produtos que você comprou.</p>
+  <!-- CONTEÚDO -->
+  <div class="compras-container">
+    <h3>Minhas Compras</h3>
+
+    <div class="filtros">
+      <button onclick="window.location.href='minhas-compras.html'">Tudo</button>
+      <button onclick="window.location.href='arquivado.html'">Arquivado</button>
+    </div>
+
+    <input type="text" class="search-bar" placeholder="🔍 Procurar compra...">
+
+    <button class="btn-filter" onclick="toggleFilters()">Filter ─ ─ ─</button>
+    <div class="filter-options" id="filterOptions">
+      <p>Por tipo de produto</p>
+      <p>Por nome do criador</p>
+      <p>Por período</p>
+    </div>
+
+    <button class="order-btn" onclick="toggleOrders()">Mais velho ▼</button>
+    <div class="order-options" id="orderOptions">
+      <p>Mais novo</p>
+      <p>Ordem alfabética A-Z</p>
+    </div>
+
+    <div class="carrinho-vazio">
+      <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="Carrinho Vazio">
+      <p>Aqui você vai encontrar todas informações que você precisa ou seus produtos</p>
+      <p>Aqui aparecerão seus produtos</p>
+      <p>Acesse o seu marketplace/loja de produtos e faça a sua primeira compra</p>
+      <a href="loja.html" class="btn-red">Comprar Produto</a>
+    </div>
   </div>
 
   <script>
     function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+      document.getElementById("mySidebar").classList.toggle("active");
+    }
+    function toggleFilters() {
+      document.getElementById("filterOptions").style.display =
+        document.getElementById("filterOptions").style.display === "block" ? "none" : "block";
+    }
+    function toggleOrders() {
+      document.getElementById("orderOptions").style.display =
+        document.getElementById("orderOptions").style.display === "block" ? "none" : "block";
     }
   </script>
 </body>

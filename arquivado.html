@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cancelado/Refundado - DIGIVEND</title>
+  <title>Arquivado - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .header-cancelado {
+    .header-arquivado {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -14,12 +14,12 @@
       background: #1e1e1e;
       color: #fff;
     }
-    .header-cancelado h2 {
+    .header-arquivado h2 {
       margin: 0;
       font-size: 20px;
       font-weight: 600;
     }
-    .cancelado-container {
+    .arquivado-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -29,23 +29,18 @@
       color: #666;
       padding: 20px;
     }
-    .box-cancelado {
+    .box-arquivado {
       border: 2px dashed #ccc;
       border-radius: 10px;
       padding: 30px;
       width: 80%;
       max-width: 500px;
     }
-    .box-cancelado img {
-      width: 120px;
-      margin-bottom: 15px;
-      opacity: 0.7;
-    }
   </style>
 </head>
 <body>
   <!-- HEADER -->
-  <div class="header-cancelado">
+  <div class="header-arquivado">
     <button class="openbtn" onclick="toggleSidebar()">☰</button>
     <h2>DIGIVEND</h2>
   </div>
@@ -63,11 +58,10 @@
   </div>
 
   <!-- CONTEÚDO -->
-  <div class="cancelado-container">
-    <div class="box-cancelado">
-      <img src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="Cancelado">
-      <p><strong>Aqui aparecerão os produtos cancelados ou refundados</strong></p>
-      <p>Se você solicitou um reembolso ou cancelou uma compra, ela será exibida nesta área.</p>
+  <div class="arquivado-container">
+    <div class="box-arquivado">
+      <p><strong>Aqui você encontrará os seus produtos arquivados</strong></p>
+      <p>Para arquivar um produto adquirido, vá até suas compras e selecione a opção de arquivar.</p>
     </div>
   </div>
 
@@ -78,3 +72,4 @@
   </script>
 </body>
 </html>
+
