@@ -9,80 +9,56 @@
 <body>
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
-    <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <h2>DIGIVEND</h2>
-    <ul>
-      <li><a href="dashboard.html">Início</a></li>
-      <li><a href="minhas-compras.html" class="active">Minhas Compras</a></li>
-      <li><a href="cancelado.html">Cancelado / Refundado</a></li>
-      <li><a href="minha-conta.html">Minha Conta</a></li>
-      <li><a href="comprar-produto.html">Comprar um Produto</a></li>
-      <li><a href="criar-produto.html">Criar meu Produto e Vender</a></li>
-      <li><a href="#" onclick="logout()">Sair</a></li>
-    </ul>
+    <a href="dashboard.html">Início</a>
+    <a href="minhas-compras.html" class="active">Minhas Compras</a>
+    <a href="cancelado.html">Cancelado/Refundado</a>
+    <a href="minha-conta.html">Minha Conta</a>
+    <a href="comprar.html">Comprar um produto</a>
+    <a href="criar-produto.html">Criar meu produto e vender</a>
   </div>
 
-  <!-- Conteúdo -->
-  <div class="content">
-    <header class="topo-conta">
-      <button class="hamburger" onclick="toggleSidebar()">☰</button>
-      <h1>DIGIVEND</h1>
-    </header>
-
+  <!-- Conteúdo principal -->
+  <div class="compras-page">
+    <h1>DIGIVEND</h1>
     <h2>Minhas Compras</h2>
 
-    <!-- Filtros -->
-    <div class="filtros">
-      <button class="btn-filtro">Tudo</button>
-      <button class="btn-filtro">Arquivado</button>
+    <!-- Botões Tudo e Arquivado -->
+    <div class="compras-filtros">
+      <button class="compras-btn">Tudo</button>
+      <button class="compras-btn">Arquivado</button>
     </div>
 
-    <input type="text" placeholder="🔍 Procurar compra" class="barra-pesquisa">
+    <!-- Barra de pesquisa -->
+    <input type="text" class="compras-pesquisa" placeholder="Procurar compra">
 
-    <button class="filter-btn">Filter ▾</button>
-    <div class="filter-options">
+    <!-- Botão Filter -->
+    <button class="compras-btn">Filter</button>
+    <div class="filter-opcoes">
       <p>Por tipo de produto</p>
       <p>Por nome do criador</p>
       <p>Por período</p>
     </div>
 
-<!-- Filtros de ordenação -->
-<div class="ordenacao">
-  <button id="maisVelhoBtn" class="ordenar-btn">Mais velho ⌄</button>
-  <div id="menuOrdenar" class="menu-ordenar">
-    <button class="ordenar-opcao">Mais novo</button>
-    <button class="ordenar-opcao">Ordem alfabética A-Z</button>
-  </div>
-</div>
-
-    <!-- Caso sem compras -->
-    <div class="sem-compras">
-      <div class="carrinho">🛒</div>
-      <p>Aqui você vai encontrar todas informações que você precisa ou seus produtos</p>
-      <p>Aqui aparecerão seus produtos</p>
-      <p>Acesse o seu marketplace/loja de produtos e faça a sua primeira compra</p>
-      <button class="btn-vermelho">Comprar Produto</button>
+    <!-- Botão Mais velho -->
+    <div class="mais-velho-container">
+      <button class="mais-velho">Mais velho</button>
+      <div class="mais-velho-opcoes">
+        <p>Mais novo</p>
+        <p>Ordem alfabética A-Z</p>
+      </div>
     </div>
+
+    <!-- Carrinho vazio -->
+    <div class="carrinho-vazio">
+      🛒
+    </div>
+    <p>Aqui você vai encontrar todas informações que você precisa ou seus produtos</p>
+    <p>Aqui aparecerão seus produtos</p>
+    <p>Acesse o seu marketplace/loja de produtos e faça a sua primeira compra</p>
+
+    <button class="comprar-produto-btn">Comprar produto</button>
   </div>
 
   <script src="script.js"></script>
-
-<script>
-  const maisVelhoBtn = document.getElementById("maisVelhoBtn");
-  const menuOrdenar = document.getElementById("menuOrdenar");
-
-  maisVelhoBtn.addEventListener("click", () => {
-    menuOrdenar.style.display = 
-      menuOrdenar.style.display === "block" ? "none" : "block";
-  });
-
-  // Fecha o menu se clicar fora
-  window.addEventListener("click", function(e) {
-    if (!maisVelhoBtn.contains(e.target) && !menuOrdenar.contains(e.target)) {
-      menuOrdenar.style.display = "none";
-    }
-  });
-</script>
-
 </body>
 </html>
