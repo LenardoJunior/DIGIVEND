@@ -3,32 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Criar Produto</title>
+  <title>Criar Produto - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <span class="menu-btn" onclick="toggleSidebar()">☰</span>
-
+  <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
-    <a href="marketplace.html">Início</a>
-    <a href="minhas-compras.html">Minhas Compras</a>
-    <a href="cancelado.html">Cancelado / Refundado</a>
-    <a href="minha-conta.html">Minha Conta</a>
-    <a href="loja.html">Comprar um Produto</a>
-    <a href="criar-produto.html" class="active">Criar meu Produto e Vender</a>
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <h2>DIGIVEND</h2>
+    <ul>
+      <li><a href="dashboard.html">Início</a></li>
+      <li><a href="minhas-compras.html">Minhas Compras</a></li>
+      <li><a href="cancelado.html">Cancelado / Refundado</a></li>
+      <li><a href="minha-conta.html">Minha Conta</a></li>
+      <li><a href="comprar-produto.html">Comprar um Produto</a></li>
+      <li><a href="criar-produto.html" class="active">Criar meu Produto e Vender</a></li>
+      <li><a href="#" onclick="logout()">Sair</a></li>
+    </ul>
   </div>
 
-  <div class="main">
-    <h1>Criar Produto</h1>
-    <p>Aqui você poderá cadastrar novos produtos para vender.</p>
+  <!-- Conteúdo -->
+  <div class="content">
+    <header class="topo-conta">
+      <button class="hamburger" onclick="toggleSidebar()">☰</button>
+      <h1>DIGIVEND</h1>
+    </header>
+
+    <h2>Criar Produto</h2>
+    <p>Aqui ficará o formulário para criação e venda de produtos.</p>
   </div>
 
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-

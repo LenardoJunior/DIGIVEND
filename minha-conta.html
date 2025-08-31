@@ -3,24 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha Conta</title>
+  <title>Minha Conta - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <span class="menu-btn" onclick="toggleSidebar()">☰</span>
-
-  <div class="sidebar" id="sidebar">
-    <a href="marketplace.html">Início</a>
-    <a href="minhas-compras.html">Minhas Compras</a>
-    <a href="cancelado.html">Cancelado / Refundado</a>
-    <a href="minha-conta.html" class="active">Minha Conta</a>
-    <a href="loja.html">Comprar um Produto</a>
-    <a href="criar-produto.html">Criar meu Produto e Vender</a>
+  <!-- Barra superior -->
+  <div class="topbar">
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <h2 class="site-name">DIGIVEND</h2>
+    <div class="profile-pic">U</div>
   </div>
 
-  <div class="main">
-    <h1>Minha Conta</h1>
-    <p>Gerencie suas informações pessoais aqui.</p>
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <a href="dashboard.html">Início</a>
+    <a href="minhas-compras.html">Minhas Compras</a>
+    <a href="arquivados.html">Arquivados</a>
+    <a href="minha-conta.html" class="active">Minha Conta</a>
+    <a href="comprar.html">Comprar um produto</a>
+    <a href="criar-produto.html">Criar meu produto e vender</a>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="content" class="content">
+    <h1>Olá, Usuário</h1>
+    <p>Bem-vindo à sua área de <strong>Minha Conta</strong>. Aqui você pode visualizar e gerenciar suas informações pessoais, preferências e segurança.</p>
+
+    <!-- Informações pessoais -->
+    <div class="profile-section">
+      <div class="profile-circle">U</div>
+      <h3>Informações Pessoais</h3>
+      <p><strong>Nome de Usuário:</strong> usuario123</p>
+      <p><strong>Nome Completo:</strong> João da Silva</p>
+      <p><strong>E-mail:</strong> usuario@email.com</p>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings-section">
+      <h3>⚙️ Settings</h3>
+      <p>Altere idioma e fuso horário.</p>
+    </div>
+
+    <!-- Privacidade -->
+    <div class="privacy-section">
+      <h3>🔒 Privacidade e Segurança</h3>
+      <p>Troque sua senha, finalize sessões em outros dispositivos e acesse suas informações da conta DIGIVEND.</p>
+      <button class="btn-red">Acessar</button>
+    </div>
   </div>
 
   <script>
@@ -31,4 +60,3 @@
   </script>
 </body>
 </html>
-

@@ -162,3 +162,53 @@ body {
   font-weight: bold;
   color: #fff;
 }
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e1e1e;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.profile-icon {
+  background: #ff0000;
+  color: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.circle {
+  margin: 20px auto;
+  background: #ff0000;
+  color: #fff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.info-item {
+  margin: 15px 0;
+}
+
+.secure-btn {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.secure-btn:hover {
+  background: darkred;
+}
