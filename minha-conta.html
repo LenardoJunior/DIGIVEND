@@ -1,147 +1,84 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minha Conta - DIGIVEND</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .centralizado {
-      max-width: 700px;
-      margin: 50px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .profile-circle {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: #e74c3c;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      font-weight: bold;
-      margin: 20px auto;
-    }
-    .info-bloco {
-      margin: 15px 0;
-      text-align: left;
-    }
-    .info-bloco strong {
-      display: block;
-      color: #444;
-      margin-bottom: 3px;
-    }
-    .dropdown {
-      margin-top: 20px;
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown button {
-      background: #e74c3c;
-      border: none;
-      padding: 10px 20px;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background: #fff;
-      min-width: 180px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      border-radius: 8px;
-      margin-top: 5px;
-      text-align: left;
-    }
-    .dropdown-content a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      color: #333;
-    }
-    .dropdown-content a:hover {
-      background: #f1f1f1;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .privacidade {
-      margin-top: 40px;
-    }
-    .btn-acessar {
-      margin-top: 15px;
-      background: #e74c3c;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="sidebar">
-    <button class="hamburguer">&#9776;</button>
-    <h2>DIGIVEND</h2>
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <button id="closeSidebar" class="close-btn">&times;</button>
     <ul>
       <li><a href="dashboard.html">Início</a></li>
       <li><a href="minhas-compras.html">Minhas Compras</a></li>
+      <li><a href="cancelado.html">Cancelado/Refundado</a></li>
       <li><a href="minha-conta.html" class="active">Minha Conta</a></li>
+      <li><a href="comprar-produto.html">Comprar um Produto</a></li>
+      <li><a href="criar-produto.html">Criar meu Produto e Vender</a></li>
     </ul>
   </div>
 
-  <div class="content centralizado">
-    <div style="text-align: right;">
-      <div class="profile-circle">U</div>
-    </div>
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <header>
+      <button id="openSidebar" class="hamburger">&#9776;</button>
+      <h1>DIGIVEND</h1>
+      <div class="profile-circle">U</div> <!-- Inicial do usuário -->
+    </header>
 
-    <h1>Olá, Usuário!</h1>
-    <p>Bem-vindo à sua conta DIGIVEND. Aqui você pode ver e editar suas informações pessoais.</p>
+    <section class="account-section">
+      <h2>Olá, <span id="username">Usuário</span> 👋</h2>
+      <p>Bem-vindo à sua área pessoal! Aqui poderá gerir a sua conta, dados e segurança no DIGIVEND.</p>
 
-    <div class="info-bloco">
-      <strong>Nome de usuário (público):</strong>
-      <span>usuario123</span>
-    </div>
-
-    <div class="info-bloco">
-      <strong>Nome completo:</strong>
-      <span>Usuário Teste</span>
-    </div>
-
-    <div class="info-bloco">
-      <strong>E-mail:</strong>
-      <span>usuario@email.com</span>
-    </div>
-
-    <!-- Settings -->
-    <div class="dropdown">
-      <button>⚙️ Settings</button>
-      <div class="dropdown-content">
-        <a href="idioma.html">🌐 Alterar Idioma</a>
-        <a href="fuso-horario.html">🕒 Alterar Fuso Horário</a>
+      <!-- Foto/Inicial -->
+      <div class="profile-block">
+        <div class="profile-circle large">U</div>
+        <h3>Informações Pessoais</h3>
+        <p><strong>Nome de usuário (público):</strong><br><span id="public-name">usuário123</span></p>
+        <p><strong>Nome completo:</strong><br><span id="full-name">Exemplo Nome</span></p>
+        <p><strong>Email:</strong><br><span id="email">usuario@exemplo.com</span></p>
+        <p><strong>Telefone:</strong><br><span id="telefone">+258 84 123 4567</span></p>
       </div>
-    </div>
 
-    <!-- Privacidade -->
-    <div class="privacidade">
-      <h2>🔒 Privacidade e Segurança</h2>
-      <p>Aqui você pode alterar sua senha, encerrar sessões em outros dispositivos e acessar informações da sua conta DIGIVEND.</p>
-      <a href="privacidade.html">
-        <button class="btn-acessar">🛡️ Acessar</button>
-      </a>
-    </div>
+      <!-- Configurações -->
+      <div class="settings">
+        <button class="accordion">⚙️ Configurações</button>
+        <div class="panel">
+          <p><strong>Idioma:</strong> Português (Moçambique)</p>
+          <p><strong>Fuso horário:</strong> Maputo (GMT+2)</p>
+        </div>
+      </div>
+
+      <!-- Privacidade e Segurança -->
+      <div class="security">
+        <h3>Privacidade e Segurança</h3>
+        <p>Aqui poderá alterar a sua senha, terminar sessões em outros dispositivos e aceder às informações da sua conta DIGIVEND.</p>
+        <button class="security-btn">🛡️ Acessar</button>
+      </div>
+    </section>
   </div>
+
+  <script>
+    // Sidebar
+    document.getElementById("openSidebar").onclick = function() {
+      document.getElementById("sidebar").style.width = "250px";
+    }
+    document.getElementById("closeSidebar").onclick = function() {
+      document.getElementById("sidebar").style.width = "0";
+    }
+
+    // Acordeão para Configurações
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
 </body>
 </html>
