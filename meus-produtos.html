@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Produtos - DIGIVEND</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .meus-produtos-container {
+      padding: 20px;
+      margin-top: 80px;
+    }
+    .meus-produtos-container h2 {
+      color: #e60000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .categoria {
+      margin-bottom: 40px;
+    }
+    .categoria h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .produtos-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding-bottom: 10px;
+    }
+    .produto-item {
+      flex: 0 0 160px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 10px;
+    }
+    .produto-item img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .produto-item h4 {
+      margin: 8px 0;
+      color: #444;
+    }
+    .produto-item a {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 6px 10px;
+      background: #e60000;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .produto-item a:hover {
+      background: #c70000;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-toggle">☰</button>
+    <h1 class="logo">DIGIVEND</h1>
+    <div class="user-icon">U</div>
+  </header>
+
+  <main class="meus-produtos-container">
+    <h2>📂 Meus Produtos</h2>
+
+    <!-- Ebooks -->
+    <div class="categoria">
+      <h3>📘 Meus Ebooks</h3>
+      <div class="produtos-row">
+        <div class="produto-item">
+          <img src="img/ebook1.jpg" alt="Ebook 1">
+          <h4>Ebook 1</h4>
+          <a href="produto-ebook1.html">Abrir</a>
+        </div>
+        <div class="produto-item">
+          <img src="img/ebook2.jpg" alt="Ebook 2">
+          <h4>Ebook 2</h4>
+          <a href="produto-ebook2.html">Abrir</a>
+        </div>
+        <div class="produto-item">
+          <img src="img/ebook3.jpg" alt="Ebook 3">
+          <h4>Ebook 3</h4>
+          <a href="produto-ebook3.html">Abrir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cursos -->
+    <div class="categoria">
+      <h3>🎓 Meus Cursos</h3>
+      <div class="produtos-row">
+        <div class="produto-item">
+          <img src="img/curso1.jpg" alt="Curso 1">
+          <h4>Curso 1</h4>
+          <a href="produto-curso1.html">Abrir</a>
+        </div>
+        <div class="produto-item">
+          <img src="img/curso2.jpg" alt="Curso 2">
+          <h4>Curso 2</h4>
+          <a href="produto-curso2.html">Abrir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guias -->
+    <div class="categoria">
+      <h3>📑 Meus Guias</h3>
+      <div class="produtos-row">
+        <div class="produto-item">
+          <img src="img/guia1.jpg" alt="Guia 1">
+          <h4>Guia 1</h4>
+          <a href="produto-guia1.html">Abrir</a>
+        </div>
+        <div class="produto-item">
+          <img src="img/guia2.jpg" alt="Guia 2">
+          <h4>Guia 2</h4>
+          <a href="produto-guia2.html">Abrir</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

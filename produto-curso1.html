@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso 1 - DIGIVEND</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-toggle">☰</button>
+    <h1 class="logo">DIGIVEND</h1>
+    <div class="user-icon">U</div>
+  </header>
+
+  <main class="produto-container">
+    <h2>🔒 Curso 1: Marketing Digital</h2>
+    <form id="loginForm">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Senha" required>
+      <button type="submit">Acessar Curso</button>
+    </form>
+
+    <div id="conteudo" style="display:none; margin-top:20px;">
+      <h3>🎓 Aula 1 - Introdução</h3>
+      <video controls width="100%">
+        <source src="video/curso1-aula1.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+      <p>⚠️ Conteúdo protegido, não pode ser gravado ou partilhado.</p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("conteudo").style.display = "block";
+      this.style.display = "none";
+    });
+  </script>
+</body>
+</html>

@@ -1,34 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja de Produtos</title>
+  <title>Loja de Produtos - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .loja-container {
+      padding: 20px;
+      margin-top: 80px;
+    }
+    .loja-titulo {
+      text-align: center;
+      color: #e60000;
+      margin-bottom: 20px;
+    }
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .produto-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
+    .produto-card:hover {
+      transform: scale(1.05);
+    }
+    .produto-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .produto-card h3 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+    .produto-card p {
+      font-size: 14px;
+      color: #666;
+    }
+    .produto-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #e60000;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .produto-card a:hover {
+      background: #c70000;
+    }
+  </style>
 </head>
 <body>
-  <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+  <header class="topbar">
+    <button class="menu-toggle">☰</button>
+    <h1 class="logo">DIGIVEND</h1>
+    <div class="user-icon">U</div>
+  </header>
 
-  <div class="sidebar" id="sidebar">
-    <a href="marketplace.html">Início</a>
-    <a href="minhas-compras.html">Minhas Compras</a>
-    <a href="cancelado.html">Cancelado / Refundado</a>
-    <a href="minha-conta.html">Minha Conta</a>
-    <a href="loja.html" class="active">Comprar um Produto</a>
-    <a href="criar-produto.html">Criar meu Produto e Vender</a>
-  </div>
+  <main class="loja-container">
+    <h2 class="loja-titulo">🛒 Loja de Produtos</h2>
+    <div class="produtos-grid">
+      <!-- Ebooks -->
+      <div class="produto-card">
+        <img src="img/ebook1.jpg" alt="Ebook 1">
+        <h3>Ebook 1</h3>
+        <p>Aprenda técnicas de vendas digitais.</p>
+        <a href="produto-ebook1.html">Ver Produto</a>
+      </div>
+      <div class="produto-card">
+        <img src="img/ebook2.jpg" alt="Ebook 2">
+        <h3>Ebook 2</h3>
+        <p>Guia prático para iniciantes.</p>
+        <a href="produto-ebook2.html">Ver Produto</a>
+      </div>
+      <div class="produto-card">
+        <img src="img/ebook3.jpg" alt="Ebook 3">
+        <h3>Ebook 3</h3>
+        <p>Segredos do marketing online.</p>
+        <a href="produto-ebook3.html">Ver Produto</a>
+      </div>
 
-  <div class="main">
-    <h1>Loja de Produtos</h1>
-    <p>Aqui você poderá comprar produtos disponíveis no marketplace.</p>
-  </div>
+      <!-- Cursos -->
+      <div class="produto-card">
+        <img src="img/curso1.jpg" alt="Curso 1">
+        <h3>Curso 1</h3>
+        <p>Curso completo de vendas online.</p>
+        <a href="produto-curso1.html">Ver Produto</a>
+      </div>
+      <div class="produto-card">
+        <img src="img/curso2.jpg" alt="Curso 2">
+        <h3>Curso 2</h3>
+        <p>Domine o tráfego pago.</p>
+        <a href="produto-curso2.html">Ver Produto</a>
+      </div>
 
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
-    }
-  </script>
+      <!-- Guias -->
+      <div class="produto-card">
+        <img src="img/guia1.jpg" alt="Guia 1">
+        <h3>Guia 1</h3>
+        <p>Guia rápido de marketing digital.</p>
+        <a href="produto-guia1.html">Ver Produto</a>
+      </div>
+      <div class="produto-card">
+        <img src="img/guia2.jpg" alt="Guia 2">
+        <h3>Guia 2</h3>
+        <p>Checklist para negócios online.</p>
+        <a href="produto-guia2.html">Ver Produto</a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
-
