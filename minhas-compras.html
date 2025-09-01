@@ -1,178 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minhas Compras - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Centralizar conteúdo principal */
-    .compras-container {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .compras-actions {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 15px 0;
-    }
-
-    .compras-actions button {
-      padding: 8px 16px;
-      border: none;
-      background: #e50914;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .search-bar {
-      margin: 20px auto;
-      max-width: 400px;
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .search-bar input {
-      flex: 1;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    .filter-dropdown, .mais-velho-dropdown {
-      position: relative;
-      display: inline-block;
-      margin: 10px;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background: #fff;
-      min-width: 200px;
-      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-      z-index: 1000;
-      text-align: left;
-    }
-
-    .dropdown-content button {
-      display: block;
-      width: 100%;
-      border: none;
-      background: none;
-      padding: 10px;
-      text-align: left;
-      cursor: pointer;
-    }
-
-    .dropdown-content button:hover {
-      background: #eee;
-    }
-
-    .dropdown-content.show {
-      display: block;
-    }
-
-    .cart-icon {
-      font-size: 80px;
-      color: #999;
-      margin: 30px 0;
-    }
-
-    .comprar-btn {
-      background: #e50914;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      font-size: 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-  </style>
 </head>
 <body>
+  <header class="topbar">
+    <button class="menu-toggle">☰</button>
+    <h1 class="logo">DIGIVEND</h1>
+    <div class="user-icon">U</div>
+  </header>
 
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <a href="dashboard.html">Início</a>
-    <a href="minhas-compras.html">Minhas Compras</a>
-    <a href="#">Cancelado/Refundado</a>
-    <a href="minha-conta.html">Minha Conta</a>
-    <a href="comprar-produto.html">Comprar um produto</a>
-    <a href="criar-produto.html">Criar meu produto e vender</a>
-  </div>
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="dashboard-comprador.html">Início</a></li>
+        <li><a href="minhas-compras.html" class="active">Minhas compras</a></li>
+        <li><a href="arquivados.html">Arquivado</a></li>
+        <li><a href="minha-conta.html">Minha conta</a></li>
+        <li><a href="comprar.html">Comprar um produto</a></li>
+        <li><a href="criar-produto.html">Criar meu produto e vender</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-  <!-- Topbar -->
-  <div class="topbar">
-    <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <span class="site-name">DIGIVEND</span>
-  </div>
-
-  <!-- Conteúdo -->
-  <div class="compras-container">
+  <main class="content">
     <h2>Minhas Compras</h2>
 
     <!-- Botões Tudo / Arquivado -->
-    <div class="compras-actions">
-      <button>Tudo</button>
-      <button onclick="window.location.href='arquivado.html'">Arquivado</button>
+    <div class="filtros-topo">
+      <button class="btn">Tudo</button>
+      <button class="btn" onclick="window.location.href='arquivados.html'">Arquivado</button>
     </div>
 
     <!-- Barra de pesquisa -->
-    <div class="search-bar">
-      <input type="text" placeholder="Ex: procurar compra">
-    </div>
+    <input type="text" placeholder="Procurar compra" class="search-bar">
 
-    <!-- Filtros -->
-    <div class="filter-dropdown">
-      <button onclick="toggleDropdown('filter-options')">Filter</button>
-      <div id="filter-options" class="dropdown-content">
-        <button>Por tipo de produto</button>
-        <button>Por nome do criador</button>
-        <button>Por período</button>
+    <!-- Botão Filter -->
+    <div class="dropdown">
+      <button class="btn">Filter</button>
+      <div class="dropdown-content">
+        <a href="#">Por tipo de produto</a>
+        <a href="#">Por nome do criador</a>
+        <a href="#">Por período</a>
       </div>
     </div>
 
-    <!-- Ordenação -->
-    <div class="mais-velho-dropdown">
-      <button onclick="toggleDropdown('order-options')">Mais velho</button>
-      <div id="order-options" class="dropdown-content">
-        <button>Mais novo</button>
-        <button>Ordem alfabética A-Z</button>
+    <!-- Botão Mais velho -->
+    <div class="dropdown">
+      <button class="btn">Mais velho</button>
+      <div class="dropdown-content">
+        <a href="#">Mais novo</a>
+        <a href="#">Ordem alfabética A-Z</a>
       </div>
     </div>
 
-    <!-- Carrinho vazio -->
-    <div class="cart-icon">🛒</div>
-    <p>Aqui você vai encontrar todas informações que você precisa ou seus produtos.</p>
-    <p>Aqui aparecerão seus produtos.</p>
-    <p>Acesse o seu marketplace/loja de produtos e faça a sua primeira compra.</p>
+    <!-- 🆕 Lista de produtos -->
+    <div class="produtos-lista">
+      <h3>Seus Produtos</h3>
 
-    <button class="comprar-btn" onclick="window.location.href='comprar-produto.html'">Comprar Produto</button>
-  </div>
+      <div class="produto-item">
+        <p>📘 Ebook: Como ganhar dinheiro online</p>
+        <button onclick="window.location.href='produto.html'">Abrir produto</button>
+      </div>
 
-  <script>
-    function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("active");
-    }
+      <div class="produto-item">
+        <p>🎥 Curso: Marketing Digital Avançado</p>
+        <button onclick="window.location.href='produto.html'">Abrir produto</button>
+      </div>
 
-    function toggleDropdown(id) {
-      document.getElementById(id).classList.toggle("show");
-    }
+      <div class="produto-item">
+        <p>📒 Guia: Redes sociais para negócios</p>
+        <button onclick="window.location.href='produto.html'">Abrir produto</button>
+      </div>
+    </div>
 
-    // Fechar dropdown se clicar fora
-    window.onclick = function(e) {
-      if (!e.target.matches('.filter-dropdown button') && !e.target.matches('.mais-velho-dropdown button')) {
-        document.querySelectorAll(".dropdown-content").forEach(d => d.classList.remove("show"));
-      }
-    }
-  </script>
+    <!-- Caso não tenha produtos -->
+    <div class="empty-state">
+      <p>🛒 Aqui você vai encontrar todas informações que você precisa ou seus produtos</p>
+      <p>Aqui aparecerão seus produtos</p>
+      <p>Acesse o seu marketplace/loja de produtos e faça a sua primeira compra</p>
+      <button class="btn vermelho">Comprar Produto</button>
+    </div>
+  </main>
 
+  <script src="script.js"></script>
 </body>
 </html>

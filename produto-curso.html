@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto - Curso | DIGIVEND</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { display: flex; }
+    .sidebar {
+      width: 220px;
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      height: 100vh;
+    }
+    .sidebar h2 { color: #e60000; }
+    .sidebar ul { list-style: none; padding: 0; }
+    .sidebar li { margin: 10px 0; cursor: pointer; }
+    .sidebar li:hover { color: #e60000; }
+    .content {
+      flex: 1;
+      padding: 30px;
+      background: #f4f4f4;
+    }
+    .lesson { display: none; }
+    .lesson.active { display: block; }
+    video { width: 100%; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Curso</h2>
+    <ul>
+      <li onclick="showLesson('l1')">📘 Aula 1 - Introdução</li>
+      <li onclick="showLesson('l2')">📘 Aula 2 - Ferramentas Digitais</li>
+      <li onclick="showLesson('l3')">📘 Aula 3 - Estratégias Avançadas</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Bem-vindo ao seu curso</h1>
+
+    <div id="l1" class="lesson active">
+      <h2>Aula 1: Introdução</h2>
+      <p>Descrição inicial do curso.</p>
+    </div>
+
+    <div id="l2" class="lesson">
+      <h2>Aula 2: Ferramentas Digitais</h2>
+      <video controls disablepictureinpicture controlslist="nodownload noplaybackrate">
+        <source src="video-exemplo.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div id="l3" class="lesson">
+      <h2>Aula 3: Estratégias Avançadas</h2>
+      <p>Conteúdo avançado em texto e vídeo.</p>
+    </div>
+  </div>
+
+  <script>
+    function showLesson(id) {
+      document.querySelectorAll(".lesson").forEach(l => l.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    // Bloqueios básicos
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    window.addEventListener("keyup", e => { if(e.key === "PrintScreen") alert("⚠️ Captura de tela não permitida."); });
+  </script>
+</body>
+</html>

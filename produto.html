@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto - DIGIVEND</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .produto-container {
+      max-width: 500px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
+    .produto-container h2, .produto-container h3 {
+      color: #e60000;
+      margin-bottom: 20px;
+    }
+    .produto-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .produto-container button {
+      background: #e60000;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .produto-container button:hover {
+      background: #c70000;
+    }
+    .conteudo-produto {
+      display: none;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .conteudo-produto p {
+      margin: 10px 0;
+    }
+    .aviso {
+      color: red;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <button class="menu-toggle">☰</button>
+    <h1 class="logo">DIGIVEND</h1>
+    <div class="user-icon">U</div>
+  </header>
+
+  <main>
+    <!-- Login -->
+    <div class="produto-container" id="login-section">
+      <h2>🔒 Acesso ao Produto</h2>
+      <p>Digite o seu <strong>email</strong> e <strong>senha</strong> para abrir o conteúdo adquirido.</p>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Digite seu email" required>
+        <input type="password" id="password" placeholder="Digite sua senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+
+    <!-- Conteúdo protegido -->
+    <div class="produto-container conteudo-produto" id="produto-section">
+      <h3>📘 Ebook Exclusivo: Como ganhar dinheiro online</h3>
+      <p>Bem-vindo ao seu produto! Aqui está o conteúdo protegido que você comprou.</p>
+      <p><b>Capítulo 1:</b> Introdução ao mundo digital e estratégias para vender seus produtos.</p>
+      <p><b>Capítulo 2:</b> Como criar autoridade e atrair clientes.</p>
+      <p><i>(No futuro, este conteúdo será carregado diretamente do servidor e não poderá ser partilhado, capturado ou gravado.)</i></p>
+      <p class="aviso">⚠️ Este conteúdo é protegido. Captura de tela e cópia não são permitidas.</p>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const loginSection = document.getElementById('login-section');
+    const produtoSection = document.getElementById('produto-section');
+
+    // Simulação de login
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      loginSection.style.display = "none";
+      produtoSection.style.display = "block";
+    });
+
+    // Bloqueia botão direito
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+      alert("⚠️ Cópia e clique direito estão desativados.");
+    });
+
+    // Bloqueia seleção de texto
+    document.addEventListener("selectstart", function(e){
+      e.preventDefault();
+      alert("⚠️ Cópia não é permitida.");
+    });
+
+    // Aviso ao tentar print screen
+    window.addEventListener("keyup", function(e){
+      if(e.key === "PrintScreen"){
+        alert("⚠️ Captura de tela não é permitida.");
+      }
+    });
+  </script>
+</body>
+</html>

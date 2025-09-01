@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Comprador - DIGIVEND</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Topo */
+    header {
+      background-color: #111;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: red;
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .profile-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Botão hambúrguer */
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      color: white;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 2000;
+    }
+
+    .sidebar a {
+      padding: 12px 25px;
+      text-decoration: none;
+      color: white;
+      display: block;
+      transition: 0.2s;
+    }
+
+    .sidebar a:hover {
+      background-color: red;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Conteúdo principal */
+    .main {
+      margin-top: 80px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .welcome {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 25px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background-color: red;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: darkred;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topo -->
+  <header>
+    <div style="display:flex; align-items:center;">
+      <span class="hamburger" onclick="openSidebar()">&#9776;</span>
+      <h1>DIGIVEND</h1>
+    </div>
+    <div class="profile-icon">U</div>
+  </header>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <span class="closebtn" onclick="closeSidebar()">&times;</span>
+    <a href="dashboard-comprador.html">Início</a>
+    <a href="minhas-compras.html">Minhas Compras</a>
+    <a href="arquivado.html">Arquivado</a>
+    <a href="cancelado.html">Cancelado/Refundado</a>
+    <a href="comprar-produto.html">Comprar Produto</a>
+    <a href="minha-conta.html">Minha Conta</a>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main">
+    <p class="welcome">Olá, <strong>Usuário</strong> 👋<br> Bem-vindo ao seu espaço de compras na <span style="color:red;">DIGIVEND</span>!</p>
+
+    <div class="card-container">
+      <a href="minhas-compras.html" class="card">📦 Minhas Compras</a>
+      <a href="comprar-produto.html" class="card">🛒 Comprar Produto</a>
+    </div>
+
+    <footer>
+      DIGIVEND - Simplificando suas compras e vendas em Moçambique
+    </footer>
+  </div>
+
+  <!-- Script Sidebar -->
+  <script>
+    function openSidebar() {
+      document.getElementById("sidebar").style.width = "250px";
+    }
+    function closeSidebar() {
+      document.getElementById("sidebar").style.width = "0";
+    }
+  </script>
+
+</body>
+</html>

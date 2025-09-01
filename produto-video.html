@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto - Vídeo | DIGIVEND</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .produto-container {
+      max-width: 600px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
+    .produto-container h2 {
+      color: #e60000;
+      margin-bottom: 20px;
+    }
+    .produto-container input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+    }
+    button {
+      background: #e60000;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    video {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-toggle">☰</button>
+    <h1 class="logo">DIGIVEND</h1>
+    <div class="user-icon">👤</div>
+  </header>
+
+  <main>
+    <div class="produto-container" id="login-section">
+      <h2>🔒 Curso em Vídeo</h2>
+      <p>Digite o seu email e senha para assistir ao vídeo.</p>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Digite seu email" required>
+        <input type="password" id="password" placeholder="Digite sua senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+
+    <!-- Conteúdo do vídeo -->
+    <div class="produto-container" id="produto-section" style="display:none;">
+      <h3>🎬 Aula 1: Introdução ao Marketing Digital</h3>
+      <video controls disablepictureinpicture controlslist="nodownload noplaybackrate">
+        <source src="video-exemplo.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <p><i>⚠️ Este vídeo está protegido contra downloads e capturas.</i></p>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const loginSection = document.getElementById('login-section');
+    const produtoSection = document.getElementById('produto-section');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      loginSection.style.display = "none";
+      produtoSection.style.display = "block";
+    });
+
+    // Bloqueios
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    window.addEventListener("keyup", e => { if(e.key === "PrintScreen") alert("⚠️ Captura de tela não permitida."); });
+  </script>
+</body>
+</html>

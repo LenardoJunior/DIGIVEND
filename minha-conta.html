@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -6,79 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minha Conta - DIGIVEND</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ===== HEADER ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: red;
+    }
+    .menu-btn {
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .profile-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #111;
+      color: #fff;
+      padding-top: 60px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    .sidebar a {
+      display: block;
+      padding: 15px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+    }
+    .sidebar a:hover {
+      background-color: red;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ===== CONTEÚDO PRINCIPAL ===== */
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .user-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #333;
+      color: #fff;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto;
+    }
+    .info-section {
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto 20px auto;
+    }
+    .info-section h3 {
+      margin: 10px 0 5px;
+    }
+    .settings, .privacy {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: left;
+    }
+    .settings button, .privacy button {
+      background: red;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .settings button:hover, .privacy button:hover {
+      background: darkred;
+    }
+  </style>
 </head>
 <body>
-  <!-- Sidebar -->
-  <div id="sidebar" class="sidebar">
-    <button id="closeSidebar" class="close-btn">&times;</button>
-    <ul>
-      <li><a href="dashboard.html">Início</a></li>
-      <li><a href="minhas-compras.html">Minhas Compras</a></li>
-      <li><a href="cancelado.html">Cancelado/Refundado</a></li>
-      <li><a href="minha-conta.html" class="active">Minha Conta</a></li>
-      <li><a href="comprar-produto.html">Comprar um Produto</a></li>
-      <li><a href="criar-produto.html">Criar meu Produto e Vender</a></li>
-    </ul>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <div class="logo">DIGIVEND</div>
+    <div class="profile-icon">U</div>
+  </header>
+
+  <!-- ===== SIDEBAR ===== -->
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()">✖</span>
+    <a href="dashboard.html">Início</a>
+    <a href="minhas-compras.html">Minhas Compras</a>
+    <a href="cancelados.html">Cancelado / Refundado</a>
+    <a href="minha-conta.html">Minha Conta</a>
+    <a href="produtos.html">Comprar um Produto</a>
+    <a href="criar-produto.html">Criar meu Produto e Vender</a>
   </div>
 
-  <!-- Conteúdo principal -->
-  <div class="main-content">
-    <header>
-      <button id="openSidebar" class="hamburger">&#9776;</button>
-      <h1>DIGIVEND</h1>
-      <div class="profile-circle">U</div> <!-- Inicial do usuário -->
-    </header>
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+    <h2>Minha Conta</h2>
+    <p>Olá <strong>Usuário</strong></p>
+    <p>Aqui você pode ver e gerenciar suas informações pessoais.</p>
 
-    <section class="account-section">
-      <h2>Olá, <span id="username">Usuário</span> 👋</h2>
-      <p>Bem-vindo à sua área pessoal! Aqui poderá gerir a sua conta, dados e segurança no DIGIVEND.</p>
+    <!-- Círculo de Perfil -->
+    <div class="user-circle">U</div>
+    <p>Informações Pessoais</p>
 
-      <!-- Foto/Inicial -->
-      <div class="profile-block">
-        <div class="profile-circle large">U</div>
-        <h3>Informações Pessoais</h3>
-        <p><strong>Nome de usuário (público):</strong><br><span id="public-name">usuário123</span></p>
-        <p><strong>Nome completo:</strong><br><span id="full-name">Exemplo Nome</span></p>
-        <p><strong>Email:</strong><br><span id="email">usuario@exemplo.com</span></p>
-        <p><strong>Telefone:</strong><br><span id="telefone">+258 84 123 4567</span></p>
-      </div>
+    <!-- Informações -->
+    <div class="info-section">
+      <h3>Nome de Usuário (público)</h3>
+      <p>usuario123</p>
 
-      <!-- Configurações -->
-      <div class="settings">
-        <button class="accordion">⚙️ Configurações</button>
-        <div class="panel">
-          <p><strong>Idioma:</strong> Português (Moçambique)</p>
-          <p><strong>Fuso horário:</strong> Maputo (GMT+2)</p>
-        </div>
-      </div>
+      <h3>Nome Completo</h3>
+      <p>Usuário Exemplo</p>
 
-      <!-- Privacidade e Segurança -->
-      <div class="security">
-        <h3>Privacidade e Segurança</h3>
-        <p>Aqui poderá alterar a sua senha, terminar sessões em outros dispositivos e aceder às informações da sua conta DIGIVEND.</p>
-        <button class="security-btn">🛡️ Acessar</button>
-      </div>
-    </section>
-  </div>
+      <h3>Email</h3>
+      <p>usuario@email.com</p>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings">
+      <h3>⚙️ Settings</h3>
+      <button onclick="alert('Alterar língua e fuso horário')">Abrir</button>
+    </div>
+
+    <!-- Privacidade e segurança -->
+    <div class="privacy">
+      <h3>🔒 Privacidade e Segurança</h3>
+      <p>Trocar senha, terminar sessões e acessar informações da sua conta DIGIVEND.</p>
+      <button onclick="alert('Abrindo segurança')">Acessar ✔️</button>
+    </div>
+  </main>
 
   <script>
-    // Sidebar
-    document.getElementById("openSidebar").onclick = function() {
-      document.getElementById("sidebar").style.width = "250px";
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
     }
-    document.getElementById("closeSidebar").onclick = function() {
-      document.getElementById("sidebar").style.width = "0";
-    }
-
-    // Acordeão para Configurações
-    const acc = document.querySelectorAll(".accordion");
-    acc.forEach(btn => {
-      btn.addEventListener("click", function() {
-        this.classList.toggle("active");
-        const panel = this.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-      });
-    });
   </script>
 </body>
 </html>
