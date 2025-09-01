@@ -5,60 +5,174 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minhas Compras - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Centralizar conteúdo principal */
+    .compras-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .compras-actions {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 15px 0;
+    }
+
+    .compras-actions button {
+      padding: 8px 16px;
+      border: none;
+      background: #e50914;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .search-bar {
+      margin: 20px auto;
+      max-width: 400px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .filter-dropdown, .mais-velho-dropdown {
+      position: relative;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      min-width: 200px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      text-align: left;
+    }
+
+    .dropdown-content button {
+      display: block;
+      width: 100%;
+      border: none;
+      background: none;
+      padding: 10px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .dropdown-content button:hover {
+      background: #eee;
+    }
+
+    .dropdown-content.show {
+      display: block;
+    }
+
+    .cart-icon {
+      font-size: 80px;
+      color: #999;
+      margin: 30px 0;
+    }
+
+    .comprar-btn {
+      background: #e50914;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
+
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <a href="dashboard.html">Início</a>
-    <a href="minhas-compras.html" class="active">Minhas Compras</a>
-    <a href="cancelado.html">Cancelado/Refundado</a>
+    <a href="minhas-compras.html">Minhas Compras</a>
+    <a href="#">Cancelado/Refundado</a>
     <a href="minha-conta.html">Minha Conta</a>
-    <a href="comprar.html">Comprar um produto</a>
+    <a href="comprar-produto.html">Comprar um produto</a>
     <a href="criar-produto.html">Criar meu produto e vender</a>
   </div>
 
-  <!-- Conteúdo principal -->
-  <div class="compras-page">
-    <h1>DIGIVEND</h1>
+  <!-- Topbar -->
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <span class="site-name">DIGIVEND</span>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="compras-container">
     <h2>Minhas Compras</h2>
 
-    <!-- Botões Tudo e Arquivado -->
-    <div class="compras-filtros">
-      <button class="compras-btn">Tudo</button>
-      <button class="compras-btn">Arquivado</button>
+    <!-- Botões Tudo / Arquivado -->
+    <div class="compras-actions">
+      <button>Tudo</button>
+      <button onclick="window.location.href='arquivado.html'">Arquivado</button>
     </div>
 
     <!-- Barra de pesquisa -->
-    <input type="text" class="compras-pesquisa" placeholder="Procurar compra">
-
-    <!-- Botão Filter -->
-    <button class="compras-btn">Filter</button>
-    <div class="filter-opcoes">
-      <p>Por tipo de produto</p>
-      <p>Por nome do criador</p>
-      <p>Por período</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Ex: procurar compra">
     </div>
 
-    <!-- Botão Mais velho -->
-    <div class="mais-velho-container">
-      <button class="mais-velho">Mais velho</button>
-      <div class="mais-velho-opcoes">
-        <p>Mais novo</p>
-        <p>Ordem alfabética A-Z</p>
+    <!-- Filtros -->
+    <div class="filter-dropdown">
+      <button onclick="toggleDropdown('filter-options')">Filter</button>
+      <div id="filter-options" class="dropdown-content">
+        <button>Por tipo de produto</button>
+        <button>Por nome do criador</button>
+        <button>Por período</button>
+      </div>
+    </div>
+
+    <!-- Ordenação -->
+    <div class="mais-velho-dropdown">
+      <button onclick="toggleDropdown('order-options')">Mais velho</button>
+      <div id="order-options" class="dropdown-content">
+        <button>Mais novo</button>
+        <button>Ordem alfabética A-Z</button>
       </div>
     </div>
 
     <!-- Carrinho vazio -->
-    <div class="carrinho-vazio">
-      🛒
-    </div>
-    <p>Aqui você vai encontrar todas informações que você precisa ou seus produtos</p>
-    <p>Aqui aparecerão seus produtos</p>
-    <p>Acesse o seu marketplace/loja de produtos e faça a sua primeira compra</p>
+    <div class="cart-icon">🛒</div>
+    <p>Aqui você vai encontrar todas informações que você precisa ou seus produtos.</p>
+    <p>Aqui aparecerão seus produtos.</p>
+    <p>Acesse o seu marketplace/loja de produtos e faça a sua primeira compra.</p>
 
-    <button class="comprar-produto-btn">Comprar produto</button>
+    <button class="comprar-btn" onclick="window.location.href='comprar-produto.html'">Comprar Produto</button>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+
+    function toggleDropdown(id) {
+      document.getElementById(id).classList.toggle("show");
+    }
+
+    // Fechar dropdown se clicar fora
+    window.onclick = function(e) {
+      if (!e.target.matches('.filter-dropdown button') && !e.target.matches('.mais-velho-dropdown button')) {
+        document.querySelectorAll(".dropdown-content").forEach(d => d.classList.remove("show"));
+      }
+    }
+  </script>
+
 </body>
 </html>

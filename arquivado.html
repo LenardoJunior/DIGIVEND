@@ -6,70 +6,72 @@
   <title>Arquivado - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .header-arquivado {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 20px;
-      background: #1e1e1e;
-      color: #fff;
-    }
-    .header-arquivado h2 {
-      margin: 0;
-      font-size: 20px;
-      font-weight: 600;
-    }
     .arquivado-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 70vh;
       text-align: center;
-      color: #666;
-      padding: 20px;
+      margin-top: 60px;
     }
-    .box-arquivado {
-      border: 2px dashed #ccc;
-      border-radius: 10px;
-      padding: 30px;
-      width: 80%;
-      max-width: 500px;
+
+    .arquivado-box {
+      margin: 40px auto;
+      padding: 40px;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .arquivado-box h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #e50914;
+    }
+
+    .arquivado-box p {
+      font-size: 16px;
+      margin: 8px 0;
+      color: #444;
+    }
+
+    .box-icon {
+      font-size: 80px;
+      color: #999;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <div class="header-arquivado">
-    <button class="openbtn" onclick="toggleSidebar()">☰</button>
-    <h2>DIGIVEND</h2>
-  </div>
 
-  <!-- SIDEBAR -->
-  <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" onclick="toggleSidebar()">✖ Fechar</a>
-    <a href="comprador.html">Início</a>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="dashboard.html">Início</a>
     <a href="minhas-compras.html">Minhas Compras</a>
-    <a href="arquivado.html">Arquivado</a>
-    <a href="cancelado.html">Cancelado/Refundado</a>
+    <a href="#">Cancelado/Refundado</a>
     <a href="minha-conta.html">Minha Conta</a>
-    <a href="loja.html">Comprar um Produto</a>
-    <a href="criar-produto.html">Criar meu Produto e Vender</a>
+    <a href="comprar-produto.html">Comprar um produto</a>
+    <a href="criar-produto.html">Criar meu produto e vender</a>
   </div>
 
-  <!-- CONTEÚDO -->
+  <!-- Topbar -->
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <span class="site-name">DIGIVEND</span>
+  </div>
+
+  <!-- Conteúdo -->
   <div class="arquivado-container">
-    <div class="box-arquivado">
-      <p><strong>Aqui você encontrará os seus produtos arquivados</strong></p>
-      <p>Para arquivar um produto adquirido, vá até suas compras e selecione a opção de arquivar.</p>
+    <div class="arquivado-box">
+      <div class="box-icon">📦</div>
+      <h2>Aqui você encontrará os seus produtos arquivados</h2>
+      <p>Para arquivar um produto adquirido, selecione-o em "Minhas Compras" e utilize a opção de arquivamento.</p>
+      <p>Produtos arquivados ficam guardados aqui e podem ser reativados a qualquer momento.</p>
     </div>
   </div>
 
   <script>
     function toggleSidebar() {
-      document.getElementById("mySidebar").classList.toggle("active");
+      document.getElementById("sidebar").classList.toggle("active");
     }
   </script>
+
 </body>
 </html>
-
