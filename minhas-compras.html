@@ -4,234 +4,270 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minhas Compras - DIGIVEND</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f9f9f9;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
     }
 
+    /* ---------- MENU PRINCIPAL ---------- */
     header {
       background: #000;
-      color: white;
-      padding: 15px;
+      color: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 15px 20px;
     }
-
     header h1 {
+      color: red;
       margin: 0;
-      color: #e60000;
+      font-size: 22px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 15px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: red;
     }
 
-    .menu-toggle {
-      font-size: 22px;
+    /* ---------- TOOLS (Pesquisa + Filtros) ---------- */
+    .tools {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 20px;
+    }
+    .tools input {
+      padding: 10px;
+      width: 200px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .tools button {
+      background: red;
+      color: #fff;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .tools button:hover {
+      background: darkred;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      min-width: 180px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+    .dropdown-content button {
       background: none;
       border: none;
-      color: white;
+      color: #333;
+      padding: 10px;
+      text-align: left;
+      width: 100%;
       cursor: pointer;
     }
-
-    .menu {
-      display: none;
-      flex-direction: column;
-      background: #111;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 200px;
-      padding: 10px;
+    .dropdown-content button:hover {
+      background: #eee;
     }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      padding: 10px;
+    .dropdown:hover .dropdown-content {
       display: block;
     }
 
-    .menu a:hover {
-      background: #e60000;
+    /* ---------- PRODUTOS ---------- */
+    .categoria {
+      margin: 30px 20px;
     }
-
-    .search-bar {
-      margin: 20px auto;
-      width: 90%;
+    .categoria h2 {
+      margin-bottom: 10px;
+      color: red;
+      font-size: 20px;
+    }
+    .produtos {
       display: flex;
-      gap: 10px;
+      gap: 15px;
+      overflow-x: auto;
+      padding-bottom: 10px;
     }
-
-    .search-bar input {
-      flex: 1;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    .search-bar button {
-      background: #e60000;
-      border: none;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .filtros {
-      display: flex;
-      justify-content: space-between;
-      margin: 10px 20px;
-    }
-
-    .filtros button {
-      background: #e60000;
-      border: none;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .dropdown {
-      display: none;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin: 10px 20px;
-      padding: 10px;
-    }
-
     .produto {
-      background: white;
-      margin: 15px;
-      padding: 15px;
+      flex: 0 0 180px;
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
     }
-
+    .produto img {
+      width: 100%;
+      border-radius: 8px;
+      height: 120px;
+      object-fit: cover;
+    }
     .produto h3 {
-      margin-top: 0;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .produto p {
+      font-size: 14px;
+      color: #555;
     }
 
+    /* ---------- BOTÃO FINAL ---------- */
     .comprar-btn {
       display: block;
-      text-align: center;
-      background: #e60000;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 14px;
-      width: 80%;
       margin: 30px auto;
-      font-size: 18px;
+      background: red;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 10px;
       cursor: pointer;
+    }
+    .comprar-btn:hover {
+      background: darkred;
     }
   </style>
 </head>
 <body>
-  <header>
-    <button class="menu-toggle" id="menuBtn">☰</button>
-    <h1>DIGIVEND</h1>
-    <div class="user-icon">👤</div>
-  </header>
 
-  <nav class="menu" id="menu">
-    <a href="dashboard-comprador.html">Dashboard</a>
-    <a href="loja.html">Loja</a>
-    <a href="meus-produtos.html">Meus Produtos</a>
-    <a href="minhas-compras.html">Minhas Compras</a>
+  <!-- MENU PRINCIPAL -->
+<header class="topbar">
+  <button class="menu-toggle">☰</button>
+  <h1 class="logo">DIGIVEND</h1>
+  <nav class="menu">
+    <ul>
+      <li><a href="loja.html">Loja de Produtos</a></li>
+      <li><a href="minhas-compras.html">Minhas Compras</a></li>
+      <li><a href="perfil.html">Perfil</a></li>
+      <li><a href="cancelados.html">Cancelado / Reembolsado</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
   </nav>
+</header>
 
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Pesquisar produto...">
-    <button onclick="pesquisar()">Buscar</button>
-  </div>
-
-  <div class="filtros">
-    <button onclick="toggleDropdown('filterOptions')">Filter</button>
-    <button onclick="toggleDropdown('sortOptions')">Mais velho ▾</button>
-  </div>
-
-  <div class="dropdown" id="filterOptions">
-    <p onclick="filtrar('tipo')">Por tipo de produto</p>
-    <p onclick="filtrar('criador')">Por nome do criador</p>
-    <p onclick="filtrar('periodo')">Por período</p>
-  </div>
-
-  <div class="dropdown" id="sortOptions">
-    <p onclick="ordenar('maisNovo')">Mais novo</p>
-    <p onclick="ordenar('alfabetica')">Ordem alfabética A-Z</p>
-    <p onclick="ordenar('maisVelho')">Mais velho</p>
-  </div>
-
-  <main id="compras-lista">
-    <div class="produto">
-      <h3>Ebook: Como ganhar dinheiro online</h3>
-      <p><b>Preço:</b> $10</p>
-      <p><b>Criador:</b> João Silva</p>
+  <!-- TOOLS -->
+  <div class="tools">
+    <input type="text" id="search" placeholder="Pesquisar produto...">
+    <div class="dropdown">
+      <button>Filter ⬇</button>
+      <div class="dropdown-content">
+        <button onclick="filterBy('tipo')">Por tipo de produto</button>
+        <button onclick="filterBy('criador')">Por nome do criador</button>
+        <button onclick="filterBy('periodo')">Por período</button>
+      </div>
     </div>
-    <div class="produto">
-      <h3>Curso: Marketing Digital Avançado</h3>
-      <p><b>Preço:</b> $50</p>
-      <p><b>Criador:</b> Maria Santos</p>
+    <div class="dropdown">
+      <button>Mais Velho ⬇</button>
+      <div class="dropdown-content">
+        <button onclick="sortBy('novo')">Mais novo</button>
+        <button onclick="sortBy('alfabetica')">Ordem alfabética A-Z</button>
+        <button onclick="sortBy('velho')">Mais velho</button>
+      </div>
     </div>
-    <div class="produto">
-      <h3>Guia: Investimentos para iniciantes</h3>
-      <p><b>Preço:</b> $20</p>
-      <p><b>Criador:</b> Carlos Almeida</p>
-    </div>
-  </main>
+  </div>
 
-  <button class="comprar-btn">Comprar Produto</button>
+  <!-- PRODUTOS -->
+  <section class="categoria">
+    <h2>Ebooks</h2>
+    <div class="produtos" id="ebooks">
+      <div class="produto">
+        <img src="imagens/ebook1.jpg" alt="Ebook 1">
+        <h3>Ebook 1</h3>
+        <p>Descrição curta do ebook.</p>
+      </div>
+      <div class="produto">
+        <img src="imagens/ebook2.jpg" alt="Ebook 2">
+        <h3>Ebook 2</h3>
+        <p>Descrição curta do ebook.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="categoria">
+    <h2>Cursos</h2>
+    <div class="produtos" id="cursos">
+      <div class="produto">
+        <img src="imagens/curso1.jpg" alt="Curso 1">
+        <h3>Curso 1</h3>
+        <p>Descrição curta do curso.</p>
+      </div>
+      <div class="produto">
+        <img src="imagens/curso2.jpg" alt="Curso 2">
+        <h3>Curso 2</h3>
+        <p>Descrição curta do curso.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="categoria">
+    <h2>Guias</h2>
+    <div class="produtos" id="guias">
+      <div class="produto">
+        <img src="imagens/guia1.jpg" alt="Guia 1">
+        <h3>Guia 1</h3>
+        <p>Descrição curta do guia.</p>
+      </div>
+      <div class="produto">
+        <img src="imagens/guia2.jpg" alt="Guia 2">
+        <h3>Guia 2</h3>
+        <p>Descrição curta do guia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTÃO FINAL -->
+  <button class="comprar-btn" onclick="window.location.href='loja.html'">Comprar Produto</button>
 
   <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const menu = document.getElementById("menu");
-
-    menuBtn.addEventListener("click", () => {
-      if (menu.style.display === "flex") {
-        menu.style.display = "none";
-        menuBtn.textContent = "☰";
-      } else {
-        menu.style.display = "flex";
-        menuBtn.textContent = "✖";
-      }
-    });
-
-    function toggleDropdown(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === "block" ? "none" : "block";
+    function filterBy(tipo) {
+      alert("Filtro aplicado: " + tipo);
     }
 
-    function pesquisar() {
-      let input = document.getElementById("searchInput").value.toLowerCase();
+    function sortBy(ordem) {
+      alert("Ordenação: " + ordem);
+    }
+
+    // Simulação de pesquisa
+    const searchInput = document.getElementById("search");
+    searchInput.addEventListener("input", function() {
+      let term = searchInput.value.toLowerCase();
       let produtos = document.querySelectorAll(".produto");
-      produtos.forEach(p => {
-        let text = p.textContent.toLowerCase();
-        p.style.display = text.includes(input) ? "block" : "none";
+      produtos.forEach(prod => {
+        let text = prod.innerText.toLowerCase();
+        prod.style.display = text.includes(term) ? "block" : "none";
       });
-    }
-
-    function ordenar(tipo) {
-      let lista = document.getElementById("compras-lista");
-      let produtos = Array.from(lista.children);
-      if (tipo === "alfabetica") {
-        produtos.sort((a,b) => a.textContent.localeCompare(b.textContent));
-      } else if (tipo === "maisNovo") {
-        produtos.sort((a,b) => parseInt(a.querySelector("p").textContent.replace(/\D/g,"")) - parseInt(b.querySelector("p").textContent.replace(/\D/g,"")));
-      } else if (tipo === "maisVelho") {
-        produtos.sort((a,b) => parseInt(b.querySelector("p").textContent.replace(/\D/g,"")) - parseInt(a.querySelector("p").textContent.replace(/\D/g,"")));
-      }
-      lista.innerHTML = "";
-      produtos.forEach(p => lista.appendChild(p));
-    }
-
-    function filtrar(opcao) {
-      alert("Filtro aplicado: " + opcao);
-      // futura integração com backend
-    }
+    });
   </script>
+
 </body>
 </html>

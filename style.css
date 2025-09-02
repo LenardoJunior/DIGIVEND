@@ -1,314 +1,128 @@
-/* ======== GERAL ======== */
+/* =====================
+   ESTILO GERAL
+===================== */
 body {
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
-  background: #121212; /* Preto elegante */
-  color: #ffffff;
-}
-
-/* ======== CONTAINERS DE LOGIN & CADASTRO ======== */
-.container {
-  width: 100%;
-  max-width: 400px;
-  margin: 80px auto;
-  background: #1c1c1c;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
-}
-
-.container h2 {
-  text-align: center;
-  color: #e50914; /* Vermelho destaque */
-  margin-bottom: 20px;
-}
-
-.container input[type="text"],
-.container input[type="email"],
-.container input[type="password"],
-.container input[type="tel"] {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 8px;
-  background: #2a2a2a;
-  color: #ffffff;
-  outline: none;
-}
-
-.container input::placeholder {
-  color: #aaa;
-}
-
-.container button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: #e50914;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.container button:hover {
-  background: #ff1a1a;
-  transform: scale(1.03);
-}
-
-.container p {
-  text-align: center;
-  margin-top: 15px;
-  color: #bbb;
-}
-
-.container p a {
-  color: #e50914;
-  text-decoration: none;
-}
-
-.container p a:hover {
-  text-decoration: underline;
-}
-
-/* ======== SIDEBAR ======== */
-.sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -250px; /* escondida */
-  background: #1c1c1c;
-  padding-top: 60px;
-  transition: 0.3s;
-  z-index: 2000;
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.sidebar a {
-  display: block;
-  color: #ffffff;
-  padding: 12px 20px;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  background: #e50914;
-  color: #fff;
-  padding-left: 30px;
-}
-
-/* ======== BOTÃO HAMBURGUER ======== */
-#menuBtn {
-  font-size: 30px;
-  cursor: pointer;
-  color: #fff;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 3000;
-  background: #e50914;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-#menuBtn:hover {
-  background: #ff1a1a;
-}
-
-/* ======== DASHBOARD ======== */
-.main {
-  margin-left: 0;
-  padding: 20px;
-  transition: margin-left 0.3s;
-}
-
-.main.active {
-  margin-left: 250px; /* Ajusta quando sidebar aparece */
-}
-
-.cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.card {
-  background: #1c1c1c;
-  padding: 20px;
-  border-radius: 12px;
-  flex: 1;
-  min-width: 200px;
-  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
-  text-align: center;
-}
-
-.card h3 {
-  margin-bottom: 10px;
-  color: #e50914;
-}
-
-.card p {
-  font-size: 18px;
-  font-weight: bold;
+  background-color: #000; /* fundo preto */
   color: #fff;
 }
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  color: #e60000; /* vermelho aceso */
+}
+
+/* =====================
+   TOPO / MENU
+===================== */
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1e1e1e;
-  color: #fff;
-  padding: 10px 20px;
+  background: #111;
+  padding: 15px;
 }
 
-.profile-icon {
-  background: #ff0000;
+.logo {
+  color: #e60000;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
   color: #fff;
-  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.user-icon {
+  background: #e60000;
+  color: #fff;
   width: 35px;
   height: 35px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-weight: bold;
-}
-
-.circle {
-  margin: 20px auto;
-  background: #ff0000;
-  color: #fff;
+  justify-content: center;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  font-weight: bold;
 }
 
-.info-item {
-  margin: 15px 0;
-}
-
-.secure-btn {
-  background: red;
-  color: #fff;
+/* =====================
+   BOTÕES
+===================== */
+.btn, button {
+  background: #e60000;
   border: none;
-  padding: 10px 18px;
-  border-radius: 5px;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-}
-.secure-btn:hover {
-  background: darkred;
-}
-.ordenacao {
-  margin-top: 15px;
-  position: relative;
+  text-decoration: none;
   display: inline-block;
-}
-
-.ordenar-btn {
-  background: #e63946; /* vermelho */
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.menu-ordenar {
-  display: none;
-  position: absolute;
-  background: #fff;
-  min-width: 160px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
-  z-index: 100;
-}
-
-.menu-ordenar .ordenar-opcao {
-  background: none;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-}
-
-.menu-ordenar .ordenar-opcao:hover {
-  background: #f1f1f1;
-}
-.compras-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  min-height: 100vh;
+}
+
+.btn:hover, button:hover {
+  background: #c70000;
+}
+
+/* =====================
+   CONTAINERS
+===================== */
+main {
   padding: 20px;
+  text-align: center;
 }
 
-.compras-page h2 {
-  font-size: 30px;
-  margin-bottom: 25px;
-  color: #fff;
-}
-
-.compras-filtros {
+.produtos-container {
   display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 15px;
 }
 
-.btn-filtro, .btn-filter, .mais-velho, .btn-comprar {
-  background: red;
-  color: white;
-  padding: 14px 24px;
-  border: none;
+.produto-card {
+  min-width: 180px;
+  background: #111;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.2);
+}
+
+.produto-card img {
+  max-width: 100%;
   border-radius: 8px;
-  cursor: pointer;
-  font-size: 20px;
 }
 
-.barra-pesquisa {
-  padding: 14px;
-  font-size: 20px;
+/* =====================
+   FILTROS E PESQUISA
+===================== */
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin: 20px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  width: 350px;
 }
 
-.carrinho-vazio {
-  margin-top: 40px;
-  font-size: 22px;
-  color: #ccc;
-  max-width: 600px;
+.filtros select, .filtros input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #555;
 }
 
-.carrinho-vazio .icone {
-  font-size: 80px;
-  margin-bottom: 20px;
+/* =====================
+   LOGOUT
+===================== */
+.logout-container {
+  margin-top: 100px;
 }
 
-.carrinho-vazio p {
-  margin: 12px 0;
-  line-height: 1.5;
-}
-
-.carrinho-vazio button {
-  margin-top: 25px;
+.logout-container h2 {
+  margin-bottom: 15px;
 }
