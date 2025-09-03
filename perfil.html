@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil - DigiVend</title>
+  <title>Perfil do Usuário</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="menu-toggle" onclick="toggleSidebar()">&#9776;</div>
+  <!-- Menu Hamburguer -->
+  <header>
+    <div class="logo">DIGIVEND</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="menu">
+      <div class="close-btn" onclick="toggleMenu()">✖</div>
+      <ul>
+        <li><a href="loja.html">Loja de Produtos</a></li>
+        <li><a href="minhas-compras.html">Minhas Compras</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="cancelados.html">Cancelados / Reembolsados</a></li>
+        <li><a href="logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div id="sidebar" class="sidebar">
-    <a href="dashboard.html">📊 Visão Geral</a>
-    <a href="produtos.html">🛒 Produtos</a>
-    <a href="vendas.html">💰 Vendas</a>
-    <a href="clientes.html">👥 Clientes</a>
-    <a href="gerenciador.html">⚙️ Gerenciador de Produtos</a>
-    <a href="relatorios.html">📑 Relatórios</a>
-    <a href="perfil.html">🙍 Perfil</a>
-    <a href="config.html">⚙️ Configurações</a>
-  </div>
-
-  <div class="main">
-    <h1>Perfil do Usuário</h1>
-    <p>Aqui você pode atualizar suas informações pessoais.</p>
-  </div>
+  <!-- Conteúdo principal -->
+  <main>
+    <h1>Meu Perfil</h1>
+    <p>Aqui você poderá editar informações da sua conta.</p>
+  </main>
 
   <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+    function toggleMenu() {
+      document.querySelector(".menu").classList.toggle("active");
     }
   </script>
 </body>

@@ -1,22 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logout - DIGIVEND</title>
+  <title>Logout</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <button class="menu-toggle">☰</button>
-    <h1 class="logo">DIGIVEND</h1>
-    <div class="user-icon">U</div>
+  <!-- Menu Hamburguer -->
+  <header>
+    <div class="logo">DIGIVEND</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="menu">
+      <div class="close-btn" onclick="toggleMenu()">✖</div>
+      <ul>
+        <li><a href="loja.html">Loja de Produtos</a></li>
+        <li><a href="minhas-compras.html">Minhas Compras</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="cancelados.html">Cancelados / Reembolsados</a></li>
+        <li><a href="logout.html">Sair</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="logout-container">
-    <h2>Você saiu da sua conta</h2>
-    <p>Obrigado por utilizar a <strong>DIGIVEND</strong>.</p>
-    <a href="index.html" class="btn">Voltar ao início</a>
+  <!-- Conteúdo principal -->
+  <main>
+    <h1>Você saiu da sua conta.</h1>
+    <p><a href="index.html">Clique aqui</a> para voltar ao login.</p>
   </main>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".menu").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>

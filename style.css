@@ -126,3 +126,70 @@ main {
 .logout-container h2 {
   margin-bottom: 15px;
 }
+/* Topbar com logo e botão */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  color: #ff0000;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.menu-toggle {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+/* Menu lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #111;
+  color: white;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 999;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: #ff0000;
+  text-decoration: none;
+  font-size: 18px;
+}
