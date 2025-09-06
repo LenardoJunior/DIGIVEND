@@ -1,37 +1,179 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja de Produtos</title>
+  <title>Loja de Produtos - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #111;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    .logo {
+      color: #e60000;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 250px;
+      height: 100%;
+      background: #111;
+      padding-top: 60px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+    .sidebar a {
+      display: block;
+      padding: 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .sidebar a:hover {
+      background: #e60000;
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    /* Conteúdo */
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: 60px auto;
+    }
+    h2 {
+      color: #e60000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .produto {
+      background: #111;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .produto img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .produto h3 {
+      color: #e60000;
+      margin: 10px 0;
+    }
+    .produto p {
+      font-size: 14px;
+      color: #ccc;
+    }
+    .produto .preco {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #fff;
+    }
+    .produto button {
+      background: #e60000;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    .produto button:hover {
+      background: #c70000;
+    }
+  </style>
 </head>
 <body>
-  <!-- Menu Hamburguer -->
   <header>
-    <div class="logo">DIGIVEND</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <nav class="menu">
-      <div class="close-btn" onclick="toggleMenu()">✖</div>
-      <ul>
-        <li><a href="loja.html">Loja de Produtos</a></li>
-        <li><a href="minhas-compras.html">Minhas Compras</a></li>
-        <li><a href="perfil.html">Perfil</a></li>
-        <li><a href="cancelados.html">Cancelados / Reembolsados</a></li>
-        <li><a href="logout.html">Sair</a></li>
-      </ul>
-    </nav>
+    <button class="menu-toggle">☰</button>
+    <h1 class="logo">DIGIVEND</h1>
+    <div class="user-icon">👤</div>
   </header>
 
-  <!-- Conteúdo principal -->
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <a href="loja.html">Loja de Produtos</a>
+    <a href="minhas-compras.html">Minhas Compras</a>
+    <a href="perfil.html">Perfil de Usuário</a>
+    <a href="cancelados.html">Cancelado/Reembolsado</a>
+    <a href="logout.html">Sair</a>
+  </nav>
+
   <main>
-    <h1>Loja de Produtos</h1>
-    <p>Aqui ficará a vitrine de produtos disponíveis.</p>
+    <h2>Loja de Produtos</h2>
+    <div class="produtos">
+      <!-- Produto 1 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/250x150" alt="Ebook exemplo">
+        <h3>E-book Marketing Digital</h3>
+        <p>Aprenda as melhores estratégias para alavancar suas vendas online.</p>
+        <div class="preco">R$ 49,90</div>
+        <button onclick="comprarProduto('E-book Marketing Digital')">Comprar</button>
+      </div>
+
+      <!-- Produto 2 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/250x150" alt="Curso exemplo">
+        <h3>Curso de Programação</h3>
+        <p>Curso online completo para iniciantes em desenvolvimento web.</p>
+        <div class="preco">R$ 199,90</div>
+        <button onclick="comprarProduto('Curso de Programação')">Comprar</button>
+      </div>
+
+      <!-- Produto 3 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/250x150" alt="Guia exemplo">
+        <h3>Guia de Finanças Pessoais</h3>
+        <p>Organize sua vida financeira e aprenda a investir melhor.</p>
+        <div class="preco">R$ 29,90</div>
+        <button onclick="comprarProduto('Guia de Finanças Pessoais')">Comprar</button>
+      </div>
+    </div>
   </main>
 
   <script>
-    function toggleMenu() {
-      document.querySelector(".menu").classList.toggle("active");
+    // Sidebar toggle
+    const menuToggle = document.querySelector(".menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+
+    // Simulação de compra
+    function comprarProduto(nomeProduto) {
+      alert("✅ Você selecionou: " + nomeProduto + ".\nEm breve será redirecionado para o pagamento.");
+      window.location.href = "minhas-compras.html";
     }
   </script>
 </body>

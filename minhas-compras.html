@@ -3,35 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minhas Compras</title>
+  <title>Minhas Compras - DIGIVEND</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .logo {
+      color: #e60000;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      font-size: 22px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    .user-icon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #111;
+      color: white;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background: #e60000;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .conteudo {
+      padding: 20px;
+    }
+
+    .filtros {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filtros button {
+      background: #e60000;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .filtros button:hover {
+      background: #c70000;
+    }
+
+    h2 {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #e60000;
+    }
+
+    .produtos {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    .produto {
+      min-width: 150px;
+      background: #222;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .produto img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .produto h3 {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .btn-comprar {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 30px auto 0;
+      padding: 12px;
+      background: #e60000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-comprar:hover {
+      background: #c70000;
+    }
+  </style>
 </head>
 <body>
-  <!-- Menu Hamburguer -->
-  <header>
-    <div class="logo">DIGIVEND</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <nav class="menu">
-      <div class="close-btn" onclick="toggleMenu()">✖</div>
-      <ul>
-        <li><a href="loja.html">Loja de Produtos</a></li>
-        <li><a href="minhas-compras.html">Minhas Compras</a></li>
-        <li><a href="perfil.html">Perfil</a></li>
-        <li><a href="cancelados.html">Cancelados / Reembolsados</a></li>
-        <li><a href="logout.html">Sair</a></li>
-      </ul>
-    </nav>
+  <header class="topbar">
+    <button class="menu-toggle">☰</button>
+    <h1 class="logo">DIGIVEND</h1>
+    <div class="user-icon">👤</div>
   </header>
 
-  <!-- Conteúdo principal -->
-  <main>
-    <h1>Minhas Compras</h1>
-    <p>Seus produtos adquiridos aparecerão aqui.</p>
+  <aside class="sidebar" id="sidebar">
+    <a href="loja.html">Loja de Produtos</a>
+    <a href="minhas-compras.html">Minhas Compras</a>
+    <a href="perfil.html">Perfil de Usuário</a>
+    <a href="cancelados.html">Cancelado/Reembolsado</a>
+    <a href="logout.html">Sair</a>
+  </aside>
+
+  <main class="conteudo">
+    <div class="filtros">
+      <button onclick="abrirFiltro()">Filter ⬇</button>
+      <button onclick="abrirOrdenar()">Mais velho ⬇</button>
+    </div>
+
+    <!-- EBOOKS -->
+    <h2>Ebooks</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="img/ebook1.jpg" alt="Ebook 1">
+        <h3>Ebook de Marketing</h3>
+      </div>
+      <div class="produto">
+        <img src="img/ebook2.jpg" alt="Ebook 2">
+        <h3>Ebook de Vendas</h3>
+      </div>
+    </div>
+
+    <!-- CURSOS -->
+    <h2>Cursos</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="img/curso1.jpg" alt="Curso 1">
+        <h3>Curso Online 1</h3>
+      </div>
+      <div class="produto">
+        <img src="img/curso2.jpg" alt="Curso 2">
+        <h3>Curso Online 2</h3>
+      </div>
+    </div>
+
+    <!-- GUIAS -->
+    <h2>Guias</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="img/guia1.jpg" alt="Guia 1">
+        <h3>Guia de Negócios</h3>
+      </div>
+      <div class="produto">
+        <img src="img/guia2.jpg" alt="Guia 2">
+        <h3>Guia de Estudos</h3>
+      </div>
+    </div>
+
+    <button class="btn-comprar" onclick="window.location.href='loja.html'">Comprar Produto</button>
   </main>
 
   <script>
-    function toggleMenu() {
-      document.querySelector(".menu").classList.toggle("active");
+    const sidebar = document.getElementById("sidebar");
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+
+    function abrirFiltro() {
+      alert("Opções de filtro: por tipo de produto, por nome do criador, por período.");
+    }
+
+    function abrirOrdenar() {
+      alert("Opções de ordenação: Mais novo, Mais velho, Ordem alfabética A-Z.");
     }
   </script>
 </body>
